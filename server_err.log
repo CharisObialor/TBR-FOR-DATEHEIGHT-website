@@ -1,0 +1,91 @@
+C:\Users\Dateh\Desktop\charis\TBR-FOR-DATEHEIGHT website\TBR-FOR-DATEHEIGHT-main\backend\server.py:4985: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("startup")
+C:\Users\Dateh\Desktop\charis\TBR-FOR-DATEHEIGHT website\TBR-FOR-DATEHEIGHT-main\backend\server.py:5003: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("shutdown")
+INFO:     Will watch for changes in these directories: ['C:\\Users\\Dateh\\Desktop\\charis\\TBR-FOR-DATEHEIGHT website\\TBR-FOR-DATEHEIGHT-main\\backend']
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [9244] using WatchFiles
+INFO:     Started server process [19712]
+INFO:     Waiting for application startup.
+2026-07-29 15:56:45,590 - server - INFO - MongoDB connected successfully
+2026-07-29 15:56:46,204 - indexes - INFO - Indexes ensured for collection: users (7 indexes)
+2026-07-29 15:56:46,956 - indexes - INFO - Indexes ensured for collection: orders (9 indexes)
+2026-07-29 15:56:47,544 - indexes - INFO - Indexes ensured for collection: tickets (7 indexes)
+2026-07-29 15:56:48,074 - indexes - INFO - Indexes ensured for collection: payments (6 indexes)
+2026-07-29 15:56:48,445 - indexes - INFO - Indexes ensured for collection: documents (4 indexes)
+2026-07-29 15:56:48,736 - indexes - INFO - Indexes ensured for collection: notifications (3 indexes)
+2026-07-29 15:56:48,981 - indexes - INFO - Indexes ensured for collection: otps (2 indexes)
+2026-07-29 15:56:49,299 - indexes - INFO - Indexes ensured for collection: organizations (3 indexes)
+2026-07-29 15:56:49,667 - indexes - INFO - Indexes ensured for collection: organization_invites (4 indexes)
+2026-07-29 15:56:50,166 - indexes - INFO - Indexes ensured for collection: services (5 indexes)
+2026-07-29 15:56:50,534 - indexes - INFO - Indexes ensured for collection: resources (4 indexes)
+2026-07-29 15:56:50,761 - indexes - INFO - Indexes ensured for collection: industries (2 indexes)
+2026-07-29 15:56:51,250 - indexes - INFO - Indexes ensured for collection: audit_logs (5 indexes)
+2026-07-29 15:56:51,568 - indexes - INFO - Indexes ensured for collection: reviews (3 indexes)
+2026-07-29 15:56:51,944 - indexes - INFO - Indexes ensured for collection: review_queue (4 indexes)
+2026-07-29 15:56:52,385 - indexes - INFO - Indexes ensured for collection: escalations (5 indexes)
+2026-07-29 15:56:52,762 - indexes - INFO - Indexes ensured for collection: invoices (4 indexes)
+2026-07-29 15:56:52,989 - indexes - INFO - Indexes ensured for collection: wallets (2 indexes)
+2026-07-29 15:56:53,578 - indexes - INFO - Indexes ensured for collection: wallet_transactions (7 indexes)
+2026-07-29 15:56:54,019 - indexes - INFO - Indexes ensured for collection: jobs (5 indexes)
+2026-07-29 15:56:54,020 - job_queue - INFO - Job queue started
+2026-07-29 15:56:54,020 - server - INFO - Background tasks and job queue started
+INFO:     Application startup complete.
+2026-07-29 16:06:54,439 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/api/ "HTTP/1.1 200 OK"
+2026-07-29 16:06:54,440 - server - INFO - Render keepalive ping \u2192 http://127.0.0.1:8000/api/ (status 200)
+2026-07-29 17:16:53,124 - server - WARNING - MongoDB keepalive ping failed: ac-q6m4llb-shard-00-01.7pm9qtt.mongodb.net:27017: connection pool paused (configured timeouts: socketTimeoutMS: 30000.0ms, connectTimeoutMS: 10000.0ms)
+2026-07-29 17:16:53,204 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/api/ "HTTP/1.1 200 OK"
+2026-07-29 17:16:53,205 - server - INFO - Render keepalive ping \u2192 http://127.0.0.1:8000/api/ (status 200)
+2026-07-29 17:16:54,260 - pymongo.client - ERROR - MongoClient background task encountered an error:
+Traceback (most recent call last):
+  File "C:\Users\Dateh\AppData\Roaming\Python\Python314\site-packages\pymongo\synchronous\mongo_client.py", line 2276, in _process_periodic_tasks
+    self._topology.update_pool()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Dateh\AppData\Roaming\Python\Python314\site-packages\pymongo\synchronous\topology.py", line 710, in update_pool
+    server.pool.remove_stale_sockets(generation)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\Dateh\AppData\Roaming\Python\Python314\site-packages\pymongo\synchronous\pool.py", line 966, in remove_stale_sockets
+    conn = self.connect()
+  File "C:\Users\Dateh\AppData\Roaming\Python\Python314\site-packages\pymongo\synchronous\pool.py", line 1071, in connect
+    conn.hello()
+    ~~~~~~~~~~^^
+  File "C:\Users\Dateh\AppData\Roaming\Python\Python314\site-packages\pymongo\synchronous\pool.py", line 247, in hello
+    return self._hello(None, None)
+           ~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\Dateh\AppData\Roaming\Python\Python314\site-packages\pymongo\synchronous\pool.py", line 290, in _hello
+    doc = self.command("admin", cmd, publish_events=False, exhaust_allowed=awaitable)
+  File "C:\Users\Dateh\AppData\Roaming\Python\Python314\site-packages\pymongo\synchronous\helpers.py", line 53, in inner
+    return func(*args, **kwargs)
+  File "C:\Users\Dateh\AppData\Roaming\Python\Python314\site-packages\pymongo\synchronous\pool.py", line 431, in command
+    self._raise_connection_failure(error)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\Dateh\AppData\Roaming\Python\Python314\site-packages\pymongo\synchronous\pool.py", line 403, in command
+    return command(
+        self,
+    ...<20 lines>...
+        write_concern=write_concern,
+    )
+  File "C:\Users\Dateh\AppData\Roaming\Python\Python314\site-packages\pymongo\synchronous\network.py", line 198, in command
+    reply = receive_message(conn, request_id)
+  File "C:\Users\Dateh\AppData\Roaming\Python\Python314\site-packages\pymongo\network_layer.py", line 759, in receive_message
+    length, _, response_to, op_code = _UNPACK_HEADER(receive_data(conn, 16, deadline))
+                                                     ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dateh\AppData\Roaming\Python\Python314\site-packages\pymongo\network_layer.py", line 343, in receive_data
+    wait_for_read(conn, deadline)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\Dateh\AppData\Roaming\Python\Python314\site-packages\pymongo\network_layer.py", line 318, in wait_for_read
+    raise _OperationCancelled("operation cancelled")
+pymongo.errors._OperationCancelled: operation cancelled
+2026-07-29 17:17:03,190 - server - INFO - MongoDB reconnected successfully
+2026-07-29 17:26:53,571 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/api/ "HTTP/1.1 200 OK"
+2026-07-29 17:26:53,571 - server - INFO - Render keepalive ping \u2192 http://127.0.0.1:8000/api/ (status 200)

@@ -1,0 +1,63 @@
+INFO:     Will watch for changes in these directories: ['C:\\Users\\USER\\Desktop\\CHARIS.dev\\TBR-FOR-DATEHEIGHT\\backend']
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [27240] using WatchFiles
+INFO:     Started server process [1472]
+INFO:     Waiting for application startup.
+2026-07-24 00:52:54,024 - server - INFO - MongoDB connected successfully
+2026-07-24 00:52:54,853 - indexes - INFO - Indexes ensured for collection: users (7 indexes)
+2026-07-24 00:52:55,855 - indexes - INFO - Indexes ensured for collection: orders (9 indexes)
+2026-07-24 00:52:56,690 - indexes - INFO - Indexes ensured for collection: tickets (7 indexes)
+2026-07-24 00:52:57,379 - indexes - INFO - Indexes ensured for collection: payments (6 indexes)
+2026-07-24 00:52:57,856 - indexes - INFO - Indexes ensured for collection: documents (4 indexes)
+2026-07-24 00:52:58,239 - indexes - INFO - Indexes ensured for collection: notifications (3 indexes)
+2026-07-24 00:52:58,527 - indexes - INFO - Indexes ensured for collection: otps (2 indexes)
+2026-07-24 00:52:58,910 - indexes - INFO - Indexes ensured for collection: organizations (3 indexes)
+2026-07-24 00:52:59,422 - indexes - INFO - Indexes ensured for collection: organization_invites (4 indexes)
+2026-07-24 00:53:00,023 - indexes - INFO - Indexes ensured for collection: services (5 indexes)
+2026-07-24 00:53:00,497 - indexes - INFO - Indexes ensured for collection: resources (4 indexes)
+2026-07-24 00:53:00,789 - indexes - INFO - Indexes ensured for collection: industries (2 indexes)
+2026-07-24 00:53:01,382 - indexes - INFO - Indexes ensured for collection: audit_logs (5 indexes)
+2026-07-24 00:53:01,760 - indexes - INFO - Indexes ensured for collection: reviews (3 indexes)
+2026-07-24 00:53:02,261 - indexes - INFO - Indexes ensured for collection: review_queue (4 indexes)
+2026-07-24 00:53:02,845 - indexes - INFO - Indexes ensured for collection: escalations (5 indexes)
+2026-07-24 00:53:03,323 - indexes - INFO - Indexes ensured for collection: invoices (4 indexes)
+2026-07-24 00:53:03,609 - indexes - INFO - Indexes ensured for collection: wallets (2 indexes)
+2026-07-24 00:53:04,422 - indexes - INFO - Indexes ensured for collection: wallet_transactions (7 indexes)
+2026-07-24 00:53:05,043 - indexes - INFO - Indexes ensured for collection: jobs (5 indexes)
+2026-07-24 00:53:05,044 - job_queue - INFO - Job queue started
+2026-07-24 00:53:05,044 - server - INFO - Background tasks and job queue started
+INFO:     Application startup complete.
+2026-07-24 00:59:55,623 - watchfiles.main - INFO - 1 change detected
+WARNING:  WatchFiles detected changes in 'server.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+2026-07-24 01:02:49,947 - job_queue - INFO - Job queue stopped
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1472]
+2026-07-24 01:02:51,215 - watchfiles.main - INFO - 5 changes detected
+INFO:     Started server process [21664]
+INFO:     Waiting for application startup.
+2026-07-24 01:02:53,503 - server - INFO - MongoDB connected successfully
+2026-07-24 01:02:54,391 - indexes - INFO - Indexes ensured for collection: users (7 indexes)
+2026-07-24 01:02:55,502 - indexes - INFO - Indexes ensured for collection: orders (9 indexes)
+2026-07-24 01:02:56,387 - indexes - INFO - Indexes ensured for collection: tickets (7 indexes)
+2026-07-24 01:02:57,048 - indexes - INFO - Indexes ensured for collection: payments (6 indexes)
+2026-07-24 01:02:57,539 - indexes - INFO - Indexes ensured for collection: documents (4 indexes)
+2026-07-24 01:02:57,933 - indexes - INFO - Indexes ensured for collection: notifications (3 indexes)
+2026-07-24 01:02:58,224 - indexes - INFO - Indexes ensured for collection: otps (2 indexes)
+2026-07-24 01:02:58,621 - indexes - INFO - Indexes ensured for collection: organizations (3 indexes)
+2026-07-24 01:02:59,112 - indexes - INFO - Indexes ensured for collection: organization_invites (4 indexes)
+2026-07-24 01:02:59,677 - indexes - INFO - Indexes ensured for collection: services (5 indexes)
+2026-07-24 01:03:00,162 - indexes - INFO - Indexes ensured for collection: resources (4 indexes)
+2026-07-24 01:03:00,586 - indexes - INFO - Indexes ensured for collection: industries (2 indexes)
+2026-07-24 01:03:01,206 - indexes - INFO - Indexes ensured for collection: audit_logs (5 indexes)
+2026-07-24 01:03:01,595 - indexes - INFO - Indexes ensured for collection: reviews (3 indexes)
+2026-07-24 01:03:02,062 - indexes - INFO - Indexes ensured for collection: review_queue (4 indexes)
+2026-07-24 01:03:02,645 - indexes - INFO - Indexes ensured for collection: escalations (5 indexes)
+2026-07-24 01:03:03,213 - indexes - INFO - Indexes ensured for collection: invoices (4 indexes)
+2026-07-24 01:03:03,520 - indexes - INFO - Indexes ensured for collection: wallets (2 indexes)
+2026-07-24 01:03:04,329 - indexes - INFO - Indexes ensured for collection: wallet_transactions (7 indexes)
+2026-07-24 01:03:04,913 - indexes - INFO - Indexes ensured for collection: jobs (5 indexes)
+2026-07-24 01:03:04,913 - job_queue - INFO - Job queue started
+2026-07-24 01:03:04,914 - server - INFO - Background tasks and job queue started
+INFO:     Application startup complete.

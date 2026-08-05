@@ -1,0 +1,186 @@
+INFO:     Will watch for changes in these directories: ['C:\\Users\\USER\\Desktop\\CHARIS.dev\\TBR-FOR-DATEHEIGHT\\backend']
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [5592] using WatchFiles
+INFO:     Started server process [5384]
+INFO:     Waiting for application startup.
+2026-06-17 13:37:06,482 - server - INFO - MongoDB connected successfully
+INFO:     Application startup complete.
+2026-06-17 13:38:29,150 - services.email_service - WARNING - RESEND_API_KEY not set — skipping email send
+2026-06-17 13:41:15,811 - services.email_service - WARNING - RESEND_API_KEY not set — skipping email send
+2026-06-17 13:41:26,696 - services.email_service - WARNING - RESEND_API_KEY not set — skipping email send
+2026-06-17 13:42:25,279 - watchfiles.main - INFO - 2 changes detected
+2026-06-17 13:42:25,645 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:42:27,012 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:42:27,367 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:42:31,302 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:42:31,667 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:42:32,286 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:42:32,650 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:42:33,003 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:42:33,358 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:42:33,716 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:42:34,068 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:42:40,891 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:42:41,249 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:42:45,934 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:42:46,298 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:42:46,665 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:42:47,030 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:42:47,385 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:42:47,747 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:42:51,725 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:42:52,081 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:42:52,432 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:42:52,785 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:42:53,149 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:42:53,514 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:42:56,806 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:42:57,164 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:42:57,531 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:42:57,885 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:42:58,247 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:42:58,615 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:42:58,974 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:43:01,063 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:43:01,429 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:43:01,784 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:43:02,143 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:43:02,496 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:43:02,850 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:43:03,214 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:43:17,201 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:43:17,560 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:43:17,926 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:43:18,278 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:43:18,643 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:43:19,009 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:43:19,376 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:43:19,743 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:43:20,094 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:43:20,509 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:43:25,226 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:43:25,590 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:43:25,942 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:43:26,308 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:43:26,675 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:43:27,041 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:43:29,676 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:43:30,042 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:43:30,402 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:43:30,757 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:43:31,124 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:43:31,491 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:43:36,544 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:43:36,909 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:43:37,272 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:43:37,637 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:43:38,006 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:43:38,359 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:43:41,953 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:43:42,305 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:43:42,657 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:43:43,021 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:43:43,389 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:43:43,741 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:43:50,815 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:43:51,170 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:43:51,522 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:43:51,876 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:43:52,237 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:43:52,604 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:44:01,701 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:44:02,055 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:44:02,418 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:44:02,771 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:44:03,137 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:44:03,502 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:44:07,653 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:44:08,018 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:44:08,373 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:44:08,736 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:44:09,102 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:44:09,454 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:44:12,895 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:44:13,252 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:44:13,617 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:44:13,970 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:44:14,334 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:44:14,687 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:44:18,988 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:44:19,352 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:44:19,717 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:44:20,069 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:44:20,434 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:44:20,800 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:44:27,824 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:44:28,181 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:44:28,533 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:44:28,887 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:44:29,248 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:44:29,600 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:44:34,052 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:44:34,414 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:44:34,766 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:44:35,128 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:44:35,481 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:44:35,847 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:44:43,732 - watchfiles.main - INFO - 2 changes detected
+2026-06-17 13:44:44,096 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:44:44,448 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:44:44,800 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:44:45,161 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:44:45,513 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:44:49,712 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:44:50,079 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:44:50,445 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:44:50,797 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:44:51,160 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:44:51,512 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:44:57,295 - watchfiles.main - INFO - 2 changes detected
+2026-06-17 13:44:57,662 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:44:58,027 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:44:58,382 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:44:58,743 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:44:59,097 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:45:28,264 - watchfiles.main - INFO - 2 changes detected
+2026-06-17 13:45:28,624 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:45:28,990 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:45:29,341 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:45:29,706 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:45:30,072 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:45:33,669 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:45:34,037 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:45:34,393 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:45:34,756 - watchfiles.main - INFO - 1 change detected
+2026-06-17 13:45:35,123 - watchfiles.main - INFO - 1 change detected
+2026-06-17 14:04:37,345 - pymongo.client - ERROR - MongoClient background task encountered an error:
+Traceback (most recent call last):
+  File "C:\Users\USER\Desktop\CHARIS.dev\TBR-FOR-DATEHEIGHT\backend\.venv\Lib\site-packages\pymongo\synchronous\pool.py", line 1035, in connect
+    networking_interface = _configured_socket_interface(self.address, self.opts)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Desktop\CHARIS.dev\TBR-FOR-DATEHEIGHT\backend\.venv\Lib\site-packages\pymongo\pool_shared.py", line 480, in _configured_socket_interface
+    sock = _create_connection(address, options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Desktop\CHARIS.dev\TBR-FOR-DATEHEIGHT\backend\.venv\Lib\site-packages\pymongo\pool_shared.py", line 385, in _create_connection
+    for res in socket.getaddrinfo(host, port, family=family, type=socket.SOCK_STREAM):  # type: ignore[attr-defined, unused-ignore]
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\socket.py", line 978, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11002] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Desktop\CHARIS.dev\TBR-FOR-DATEHEIGHT\backend\.venv\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 2276, in _process_periodic_tasks
+    self._topology.update_pool()
+  File "C:\Users\USER\Desktop\CHARIS.dev\TBR-FOR-DATEHEIGHT\backend\.venv\Lib\site-packages\pymongo\synchronous\topology.py", line 710, in update_pool
+    server.pool.remove_stale_sockets(generation)
+  File "C:\Users\USER\Desktop\CHARIS.dev\TBR-FOR-DATEHEIGHT\backend\.venv\Lib\site-packages\pymongo\synchronous\pool.py", line 966, in remove_stale_sockets
+    conn = self.connect()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\USER\Desktop\CHARIS.dev\TBR-FOR-DATEHEIGHT\backend\.venv\Lib\site-packages\pymongo\synchronous\pool.py", line 1059, in connect
+    _raise_connection_failure(self.address, error, timeout_details=details)
+  File "C:\Users\USER\Desktop\CHARIS.dev\TBR-FOR-DATEHEIGHT\backend\.venv\Lib\site-packages\pymongo\pool_shared.py", line 148, in _raise_connection_failure
+    raise AutoReconnect(msg) from error
+pymongo.errors.AutoReconnect: ac-q6m4llb-shard-00-01.7pm9qtt.mongodb.net:27017: [Errno 11002] getaddrinfo failed (configured timeouts: socketTimeoutMS: 30000.0ms, connectTimeoutMS: 30000.0ms)

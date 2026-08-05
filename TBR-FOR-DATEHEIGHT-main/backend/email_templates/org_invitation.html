@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #F0F2F5; margin: 0; padding: 0; }
+    .wrapper { max-width: 520px; margin: 0 auto; padding: 24px 16px; }
+    .card { background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+    .brand { background: #0F172A; padding: 28px 40px 20px; text-align: center; }
+    .brand-logo { display: inline-flex; align-items: center; gap: 10px; }
+    .brand-box { width: 36px; height: 36px; background: #ffffff; display: flex; align-items: center; justify-content: center; }
+    .brand-box span { color: #0F172A; font-weight: 800; font-size: 18px; }
+    .brand-name { color: #ffffff; font-size: 20px; font-weight: 700; letter-spacing: -0.3px; }
+    .body { padding: 36px 40px 32px; text-align: center; }
+    .greeting { font-size: 14px; color: #64748B; margin-bottom: 4px; }
+    .title { font-size: 26px; font-weight: 700; color: #0F172A; margin-bottom: 8px; letter-spacing: -0.5px; }
+    .desc { color: #64748B; font-size: 15px; line-height: 1.6; margin-bottom: 24px; }
+    .details { background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 20px; margin-bottom: 24px; text-align: left; }
+    .details-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #E2E8F0; }
+    .details-row:last-child { border-bottom: none; }
+    .details-label { font-size: 13px; color: #94A3B8; }
+    .details-value { font-size: 14px; color: #0F172A; font-weight: 600; }
+    .code-box { background: #0F172A; border-radius: 8px; padding: 16px; text-align: center; margin-bottom: 24px; }
+    .code-label { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #94A3B8; margin-bottom: 8px; }
+    .code-value { font-size: 32px; font-weight: 700; letter-spacing: 6px; color: #ffffff; font-family: 'SF Mono', 'Fira Code', 'Courier New', monospace; }
+    .btn { display: inline-block; background: #0F172A; color: #ffffff; font-size: 14px; font-weight: 600; padding: 12px 32px; border-radius: 8px; text-decoration: none; }
+    .divider { height: 1px; background: #E2E8F0; margin: 24px 0; }
+    .help-text { font-size: 13px; color: #94A3B8; line-height: 1.5; }
+    .help-text a { color: #3B82F6; text-decoration: none; font-weight: 500; }
+    .footer { background: #F8FAFC; padding: 20px 40px; text-align: center; border-top: 1px solid #E2E8F0; }
+    .footer p { font-size: 12px; color: #94A3B8; line-height: 1.6; }
+    .footer a { color: #3B82F6; text-decoration: none; }
+    @media only screen and (max-width: 480px) {
+      .body { padding: 24px 20px; }
+      .brand { padding: 20px 24px 16px; }
+      .footer { padding: 16px 20px; }
+      .code-value { font-size: 24px; letter-spacing: 4px; }
+      .title { font-size: 22px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="card">
+      <div class="brand">
+        <div class="brand-logo">
+          <div class="brand-box"><span>TBR</span></div>
+          <span class="brand-name">TBR Solutions</span>
+        </div>
+      </div>
+
+      <div class="body">
+        <p class="greeting">Hi __RECIPIENT_NAME__,</p>
+        <h1 class="title">Organization Invitation</h1>
+        <p class="desc">You have been invited to join <strong>__ORG_NAME__</strong> on TBR Solutions. Use the details below to get started.</p>
+
+        <div class="details">
+          <div class="details-row">
+            <span class="details-label">Invited By</span>
+            <span class="details-value">__INVITED_BY__</span>
+          </div>
+          <div class="details-row">
+            <span class="details-label">Organization</span>
+            <span class="details-value">__ORG_NAME__</span>
+          </div>
+          __RC_NUMBER_ROW__
+        </div>
+
+        <div class="code-box">
+          <p class="code-label">Join Code</p>
+          <div class="code-value">__JOIN_CODE__</div>
+        </div>
+
+        <p class="desc" style="margin-bottom:20px;">Use the code above in your TBR portal to join the organization, or click the button below.</p>
+
+        <a href="__PORTAL_URL__" class="btn">Go to Portal</a>
+
+        <div class="divider"></div>
+
+        <p class="help-text">
+          Didn't expect this invitation?<br>
+          If you weren't expecting an invitation from <strong>__ORG_NAME__</strong>, you can safely ignore this email.<br>
+          Need help? <a href="mailto:__SUPPORT_EMAIL__">Contact Support</a>
+        </p>
+      </div>
+
+      <div class="footer">
+        <p>
+          TBR Solutions &bull; Compliance &amp; Regulatory Simplified<br>
+          This is an automated message. Please do not reply.<br>
+          &copy; 2026 TBR Solutions. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

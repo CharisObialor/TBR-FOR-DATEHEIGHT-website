@@ -1,0 +1,18 @@
+INFO:     Started server process [20376]
+INFO:     Waiting for application startup.
+2026-06-25 09:41:14,509 - server - INFO - MongoDB connected successfully
+2026-06-25 09:41:14,513 - server - INFO - Background tasks started
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2026-06-25 09:42:14,588 - services.email_service - WARNING - SMTP_PASSWORD not set — skipping email send
+2026-06-25 09:42:14,664 - server - WARNING - Retry: send attempt 2/3 failed for testuser999@example.com
+2026-06-25 09:43:14,729 - services.email_service - WARNING - SMTP_PASSWORD not set — skipping email send
+2026-06-25 09:43:14,798 - server - WARNING - Retry: send attempt 3/3 failed for testuser999@example.com
+2026-06-25 09:46:53,688 - services.email_service - WARNING - SMTP_PASSWORD not set — skipping email send
+2026-06-25 09:46:53,689 - server - WARNING - Inline OTP send failed for charisobialor@gmail.com: sort must be an instance of dict, bson.son.SON, or any other type that inherits from collections.Mapping — retry will pick it up
+2026-06-25 09:47:15,102 - services.email_service - WARNING - SMTP_PASSWORD not set — skipping email send
+2026-06-25 09:47:15,175 - server - WARNING - Retry: send attempt 1/3 failed for charisobialor@gmail.com
+2026-06-25 09:48:15,262 - services.email_service - WARNING - SMTP_PASSWORD not set — skipping email send
+2026-06-25 09:48:15,335 - server - WARNING - Retry: send attempt 2/3 failed for charisobialor@gmail.com
+2026-06-25 09:49:15,422 - services.email_service - WARNING - SMTP_PASSWORD not set — skipping email send
+2026-06-25 09:49:15,506 - server - WARNING - Retry: send attempt 3/3 failed for charisobialor@gmail.com

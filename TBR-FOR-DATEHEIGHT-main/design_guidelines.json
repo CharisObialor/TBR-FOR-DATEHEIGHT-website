@@ -1,0 +1,71 @@
+{
+  "theme": "LIGHT",
+  "archetype": "Archetype 4 (Swiss & High-Contrast) + Enterprise Luxury",
+  "colors": {
+    "background_primary": "#FFFFFF",
+    "background_secondary": "#F8FAFC",
+    "background_dark_section": "#020617",
+    "text_primary": "#0F172A",
+    "text_secondary": "#475569",
+    "text_inverse": "#F8FAFC",
+    "accent_primary": "#0F172A",
+    "accent_hover": "#1E293B",
+    "brand_highlight": "#2563EB",
+    "border_light": "#E2E8F0",
+    "border_dark": "#1E293B"
+  },
+  "typography": {
+    "font_heading": "Cabinet Grotesk",
+    "font_body": "Satoshi",
+    "h1": "text-5xl sm:text-6xl tracking-tighter leading-none font-bold",
+    "h2": "text-3xl sm:text-4xl tracking-tight leading-tight font-semibold",
+    "h3": "text-xl sm:text-2xl tracking-tight font-medium",
+    "body": "text-base leading-relaxed",
+    "label_overline": "text-xs uppercase tracking-[0.2em] font-medium text-slate-500"
+  },
+  "spacing_and_layout": {
+    "section_padding": "py-24 sm:py-32",
+    "container": "max-w-7xl mx-auto px-6 lg:px-8",
+    "grid_bento": "grid grid-cols-1 md:grid-cols-12 gap-8",
+    "dashboard_grid": "grid grid-cols-1 lg:grid-cols-4 gap-6",
+    "border_radius": "rounded-none sm:rounded-sm"
+  },
+  "surface_strategies": {
+    "hero_overlay": "bg-slate-950/40",
+    "glass_header": "backdrop-blur-xl bg-white/80 border-b border-slate-200 shadow-sm",
+    "dashboard_card": "bg-white border border-slate-200 shadow-sm rounded-lg",
+    "dark_card": "bg-slate-900 border border-slate-800 text-white rounded-none"
+  },
+  "components": {
+    "navigation": "Sticky top-0 z-50 with glassmorphism. Include logo, 4-5 links, and primary 'Client Portal' CTA.",
+    "buttons": "Square or slightly rounded (rounded-sm). High contrast (bg-slate-900 text-white hover:bg-slate-800).",
+    "forms": "Shadcn UI inputs. 1px solid borders, focus:ring-2 focus:ring-slate-900.",
+    "tables": "Shadcn UI tables for dashboard. Dense padding, hover rows, sticky headers.",
+    "charts": "Shadcn/Recharts for analytics. Monochrome palettes with one brand highlight color.",
+    "animations": "Framer Motion. Fade up with slight Y translation (y: 20 -> 0) and stagger step for lists."
+  },
+  "icons_and_assets": {
+    "icon_library": "lucide-react",
+    "image_urls": {
+      "hero_architecture": "https://images.unsplash.com/photo-1528810289438-283f885c31ef?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzJ8MHwxfHNlYXJjaHwyfHxtb2Rlcm4lMjBnbGFzcyUyMHNreXNjcmFwZXIlMjBhYnN0cmFjdHxlbnwwfHx8fDE3ODA5MTQ5NTh8MA&ixlib=rb-4.1.0&q=85",
+      "executive_meeting_1": "https://images.unsplash.com/photo-1622675363311-3e1904dc1885?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAxODF8MHwxfHNlYXJjaHwzfHxleGVjdXRpdmUlMjBidXNpbmVzcyUyMG1lZXRpbmd8ZW58MHx8fHwxNzgwOTE0OTU4fDA&ixlib=rb-4.1.0&q=85",
+      "executive_meeting_2": "https://images.unsplash.com/photo-1573164574572-cb89e39749b4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAxODF8MHwxfHNlYXJjaHwyfHxleGVjdXRpdmUlMjBidXNpbmVzcyUyMG1lZXRpbmd8ZW58MHx8fHwxNzgwOTE0OTU4fDA&ixlib=rb-4.1.0&q=85",
+      "sponsor_logo_slack": "https://images.unsplash.com/photo-1496200186974-4293800e2c20?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHwzfHxjb21wYW55JTIwbG9nb3xlbnwwfHx8fDE3ODA5MTQ5NTh8MA&ixlib=rb-4.1.0&q=85",
+      "sponsor_logo_mercedes": "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHwxfHxjb21wYW55JTIwbG9nb3xlbnwwfHx8fDE3ODA5MTQ5NTh8MA&ixlib=rb-4.1.0&q=85",
+      "sponsor_logo_lambo": "https://images.unsplash.com/photo-1620288627223-53302f4e8c74?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHwyfHxjb21wYW55JTIwbG9nb3xlbnwwfHx8fDE3ODA5MTQ5NTh8MA&ixlib=rb-4.1.0&q=85",
+      "sponsor_logo_pexels": "https://images.pexels.com/photos/21898300/pexels-photo-21898300.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    }
+  },
+  "accessibility": {
+    "focus_states": "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2",
+    "test_attributes": "All interactive and key informational elements MUST include a data-testid attribute in kebab-case format."
+  },
+  "instructions_to_main_agent": {
+    "general": "Build TBR Solutions, a premium corporate platform comprising a public marketing site and a secure client/admin portal. Use Vite, React, Tailwind CSS, and Shadcn UI. The style must evoke authoritative 'Big 4' consulting firms (PwC, EY) with high-end, minimalist enterprise styling.",
+    "routing": "Configure React Router with distinct layouts: a Marketing Layout (/, /services, /industries) and a Portal Layout (/portal/dashboard, /portal/onboarding).",
+    "marketing_pages": "Implement 'Godly' web design patterns: bold, tracked-tight typography, asymmetrical bento-box layouts for services/industries, dark/light section contrasts, and smooth reveal animations using framer-motion.",
+    "portal_dashboard": "Apply SaaSFrame high-end enterprise patterns. Emphasize a 'control room' feel: dense layout, clear KPI cards, role-based views, and precise, accessible charts using Recharts. Keep radii sharp (rounded-sm) and borders subtle.",
+    "fonts": "Include a link to Fontshare in index.html to load 'Cabinet Grotesk' (Headings) and 'Satoshi' (Body). Do not use generic fonts like Inter.",
+    "components": "Rely heavily on Shadcn UI (Forms, Tables, Dialogs, Select). Ensure all components are customized to the enterprise theme (stark contrasts, minimal rounded corners). Use Lenis for smooth scrolling on marketing pages."
+  }
+}

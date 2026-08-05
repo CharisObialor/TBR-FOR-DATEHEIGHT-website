@@ -1,0 +1,85 @@
+version: '3.8'
+
+services:
+  # ── Blue deployment ─────────────────────────────────────────────
+  backend-blue:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: backend-base
+    container_name: tbr-backend-blue
+    env_file: ./backend/.env
+    environment:
+      - ENVIRONMENT=production
+      - COOKIE_SECURE=true
+    volumes:
+      - uploads_data:/app/backend/uploads
+    networks:
+      - tbr-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+
+  # ── Green deployment ────────────────────────────────────────────
+  backend-green:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: backend-base
+    container_name: tbr-backend-green
+    env_file: ./backend/.env
+    environment:
+      - ENVIRONMENT=production
+      - COOKIE_SECURE=true
+    volumes:
+      - uploads_data:/app/backend/uploads
+    networks:
+      - tbr-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+
+  # ── Frontend (served via Nginx) ─────────────────────────────────
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: frontend
+    container_name: tbr-frontend
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - backend-blue
+      - backend-green
+    networks:
+      - tbr-network
+    restart: unless-stopped
+
+  # ── Email worker (standalone) ──────────────────────────────────
+  email-worker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: backend-base
+    container_name: tbr-email-worker
+    command: python email_server.py
+    env_file: ./backend/.env
+    networks:
+      - tbr-network
+    restart: unless-stopped
+
+volumes:
+  uploads_data:
+
+networks:
+  tbr-network:
+    driver: bridge
