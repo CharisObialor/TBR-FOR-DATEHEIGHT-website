@@ -1,0 +1,3 @@
+[2m4:51:10 PM[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/auth/logout[39m
+Error: connect ETIMEDOUT 170.249.219.156:443
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16)

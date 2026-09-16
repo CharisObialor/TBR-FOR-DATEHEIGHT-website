@@ -225,6 +225,10 @@ export const resourcesAPI = {
   get: (slug) => api.get(`/resources/${slug}`),
 };
 
+export const newsletterAPI = {
+  subscribe: (data) => api.post('/newsletter/subscribe', data),
+};
+
 export function useResources(category, search) {
   const params = {};
   if (category) params.category = category;

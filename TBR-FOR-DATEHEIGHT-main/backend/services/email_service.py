@@ -266,6 +266,40 @@ def build_reminder_html(title: str, message: str, job_id: str) -> str:
     """
 
 
+def build_newsletter_welcome_html(name: str) -> str:
+    display_name = name.strip() if name and name.strip() else "there"
+    return f"""
+    <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
+        {_logo_header()}
+        <div style="background: #1e293b; color: white; padding: 24px; text-align: center;">
+            <h1 style="margin: 0; font-size: 22px;">Welcome to the TBR Newsletter</h1>
+        </div>
+        <div style="background: #f8fafc; padding: 24px; border: 1px solid #e2e8f0;">
+            <p style="font-size: 16px; color: #334155; line-height: 1.6;">Hi {display_name},</p>
+            <p style="font-size: 16px; color: #334155; line-height: 1.6;">
+                Thanks for subscribing. Expect plain-language updates on Nigerian tax,
+                business registration, revenue assurance and investment — plus deadline
+                alerts before the penalty clock starts.
+            </p>
+            <p style="font-size: 15px; color: #475569; line-height: 1.6;">
+                In the meantime, try our free <strong>tax estimator</strong> to get a sense of
+                your PAYE, CIT, VAT and WHT obligations in seconds.
+            </p>
+            <div style="text-align: center; margin: 24px 0;">
+                <a href="https://tbrsolutions.ng/#tax-estimator" style="display: inline-block; background: #2563eb; color: white; padding: 12px 28px; text-decoration: none; border-radius: 4px; font-weight: 600;">Estimate My Taxes</a>
+            </div>
+            <p style="font-size: 13px; color: #94a3b8; margin-top: 8px;">
+                You received this because you subscribed on tbrsolutions.ng. To unsubscribe,
+                reply to this email with the subject line "unsubscribe".
+            </p>
+        </div>
+        <div style="text-align: center; padding: 12px; color: #94a3b8; font-size: 12px;">
+            TBR Solutions — Plot 5A, Block A10, Admiralty Way, Lekki, Lagos
+        </div>
+    </div>
+    """
+
+
 def build_contact_form_html(name: str, email: str, phone: str, subject: str, message: str) -> str:
     phone_row = ""
     if phone:

@@ -85,6 +85,7 @@ from models import (
     Document, DocumentUpload, PaymentInitiate, Payment, RefundInitiate, Refund, AdminPaymentStats,
     Invoice, ResourceCreate, Resource,
     Notification, ChecklistRequest, ChecklistResponse,
+    NewsletterSubscribe, NewsletterResponse,
     TicketCreate, TicketUpdate, Ticket, TicketStatus, TicketPriority, TicketMessage,
     AdminOrder, ReviewCreate, Review, ReviewAction,
     PERMISSION_UPLOAD, PERMISSION_REVIEW, PERMISSION_DOWNLOAD, PERMISSION_APPROVE,
@@ -2892,6 +2893,44 @@ async def submit_contact_form(form: ContactForm):
     return {"status": "success", "message": "Your message has been sent. We will get back to you shortly."}
 
 
+# NEWSLETTER
+@api_router.post("/newsletter/subscribe", response_model=NewsletterResponse)
+async def subscribe_newsletter(form: NewsletterSubscribe, db: AsyncIOMotorDatabase = Depends(get_db)):
+    email = (form.email or "").strip().lower()
+    if not email or not re.match(r"^[^@\s]+@[^@\s]+\.[^@\s]+$", email):
+        raise ValidationException("Please provide a valid email address.")
+
+    name = (form.name or "").strip()
+
+    existing = await db.newsletter_subscribers.find_one({"email": email})
+    if existing:
+        return {"status": "success", "message": "You are already subscribed — we will keep you updated."}
+
+    subscriber = {
+        "email": email,
+        "name": name,
+        "subscribed_at": datetime.now(timezone.utc).isoformat(),
+        "active": True,
+        "source": "footer",
+    }
+    try:
+        await db.newsletter_subscribers.insert_one(subscriber)
+    except pymongo.errors.DuplicateKeyError:
+        return {"status": "success", "message": "You are already subscribed — we will keep you updated."}
+
+    # Send a welcome email (best effort — never fail the subscription on email failure)
+    try:
+        from services.email_service import send_support_email, send_email, build_newsletter_welcome_html
+        welcome_html = build_newsletter_welcome_html(name)
+        await send_support_email(email, "Welcome to the TBR Newsletter", welcome_html)
+        logger.info("Newsletter welcome email sent to %s", email)
+    except Exception as e:
+        logger.warning("Newsletter welcome email could not be sent to %s: %s", email, e)
+
+    logger.info("New newsletter subscriber: %s <%s>", name or "anonymous", email)
+    return {"status": "success", "message": "Subscribed successfully. Welcome aboard!"}
+
+
 # KORAPAY WEBHOOK
 @api_router.post("/payments/webhook")
 async def korapay_webhook(request: Request, db: AsyncIOMotorDatabase = Depends(get_db)):
@@ -3313,9 +3352,10 @@ async def list_wallet_transactions(
 async def list_resources(
     category: Optional[str] = None,
     search: Optional[str] = None,
+    published: Optional[bool] = None,
     db: AsyncIOMotorDatabase = Depends(get_db)
 ):
-    cache_key = f"resources_{category or 'all'}_{search or ''}"
+    cache_key = f"resources_{category or 'all'}_{search or ''}_{published or ''}"
     if not search and cache_key in resources_cache:
         return resources_cache[cache_key]
 
@@ -3327,7 +3367,9 @@ async def list_resources(
             {"title": {"$regex": search, "$options": "i"}},
             {"excerpt": {"$regex": search, "$options": "i"}}
         ]
-    
+    if published:
+        query["published"] = True
+
     resources = await db.resources.find(query, {"_id": 0}).sort("created_at", -1).to_list(100)
     if not search:
         resources_cache[cache_key] = resources

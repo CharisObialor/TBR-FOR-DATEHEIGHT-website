@@ -533,6 +533,10 @@ class ResourceCreate(BaseModel):
     author: str
     tags: List[str]
     featured_image: Optional[str] = None
+    source_name: Optional[str] = None
+    source_url: Optional[str] = None
+    read_label: Optional[str] = None
+    published: bool = False
 
 class Resource(ResourceCreate):
     model_config = ConfigDict(extra="ignore")
@@ -630,6 +634,15 @@ class ChecklistRequest(BaseModel):
 class ChecklistResponse(BaseModel):
     checklist: List[Dict[str, Any]]
     recommendations: List[str]
+
+# Newsletter Models
+class NewsletterSubscribe(BaseModel):
+    email: str
+    name: Optional[str] = None
+
+class NewsletterResponse(BaseModel):
+    status: str
+    message: str
 
 # Organization Models
 class Organization(BaseModel):

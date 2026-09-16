@@ -151,3 +151,23 @@ def build_contact_confirmation_html(name: str, subject: str) -> str:
         </div>
     </div>
     """
+
+
+def build_newsletter_welcome_html(name: str) -> str:
+    greeting = f"Hi {name}," if name else "Hello,"
+    return f"""
+    <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
+        {_logo_header()}
+        <div style="background: #1e293b; color: white; padding: 20px; text-align: center;">
+            <h1 style="margin: 0; font-size: 24px;">WELCOME TO TBR SOLUTIONS</h1>
+        </div>
+        <div style="background: #f8fafc; padding: 20px; border: 1px solid #e2e8f0;">
+            <p style="font-size: 16px; color: #334155;">{greeting}</p>
+            <p style="font-size: 16px; color: #334155;">Thank you for subscribing to our newsletter. You will receive practical tax, business and revenue assurance insights straight to your inbox.</p>
+            <p style="font-size: 14px; color: #64748b;">Expect 1-2 emails per month. We never share your details with third parties.</p>
+        </div>
+        <div style="text-align: center; padding: 12px; color: #94a3b8; font-size: 12px;">
+            TBR Solutions — Newsletter
+        </div>
+    </div>
+    """

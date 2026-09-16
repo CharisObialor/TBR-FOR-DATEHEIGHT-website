@@ -2,6 +2,80 @@
 @tailwind components;
 @tailwind utilities;
 
+.article-body {
+    color: #334155;
+}
+
+.article-body p {
+    font-size: 1rem;
+    line-height: 1.75;
+    margin-bottom: 1.25rem;
+    color: #334155;
+}
+
+.article-body h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    color: #0f172a;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+}
+
+.article-body h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: #0f172a;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.article-body ul,
+.article-body ol {
+    margin: 0 0 1.25rem 1.25rem;
+    padding-left: 1rem;
+    list-style: disc;
+}
+
+.article-body ol {
+    list-style: decimal;
+}
+
+.article-body li {
+    margin-bottom: 0.5rem;
+    line-height: 1.75;
+}
+
+.article-body strong {
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.article-body em {
+    font-style: italic;
+}
+
+.article-body blockquote {
+    border-left: 3px solid #0ea5e9;
+    background: #f0f9ff;
+    padding: 1rem 1.25rem;
+    margin: 0 0 1.25rem 0;
+    border-radius: 0.125rem;
+    font-style: italic;
+    color: #0c4a6e;
+}
+
+.article-body a {
+    color: #0284c7;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.article-body a:hover {
+    color: #0369a1;
+}
+
 body {
     margin: 0;
     font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -105,5 +179,30 @@ code {
         border-right-color: inherit;
         border-top-color: inherit;
         border-bottom-color: inherit;
+    }
+}
+
+@layer utilities {
+    .animate-marquee {
+        animation: marquee 40s linear infinite;
+    }
+
+    .animate-marquee:hover {
+        animation-play-state: paused;
+    }
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .animate-marquee {
+        animation: none;
     }
 }

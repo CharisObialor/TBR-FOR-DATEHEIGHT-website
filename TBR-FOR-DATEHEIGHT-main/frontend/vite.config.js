@@ -58,12 +58,12 @@ export default defineConfig(({ mode }) => {
     port: 3000,
     proxy: {
       '/api': {
-        target: 'https://site.tbrsolutions.ng',
+        target: 'https://api.tbrsolutions.ng',
         changeOrigin: true,
         secure: false,
       },
       '/uploads': {
-        target: 'https://site.tbrsolutions.ng',
+        target: 'https://api.tbrsolutions.ng',
         changeOrigin: true,
         secure: false,
       },

@@ -163,7 +163,7 @@ const ThemeToggle = () => {
   );
 };
 
-const Navigation = () => {
+const Navigation = ({ belowBanner = false }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [mobileAccordion, setMobileAccordion] = useState(null);
   const location = useLocation();
@@ -179,7 +179,9 @@ const Navigation = () => {
 
   return (
     <nav
-      className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-xl border-b border-border shadow-sm transition-all duration-300"
+      className={`fixed left-0 right-0 z-50 bg-background/95 backdrop-blur-xl border-b border-border shadow-sm transition-all duration-300 ${
+        belowBanner ? 'top-10' : 'top-0'
+      }`}
       data-testid="main-navigation"
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -251,7 +253,7 @@ const Navigation = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 bg-background dark:bg-[#0a0a0b] z-50 lg:hidden overflow-y-auto"
+            className="fixed inset-0 bg-background dark:bg-[#0a0a0b] z-[70] lg:hidden overflow-y-auto"
             data-testid="mobile-menu"
           >
             <div className="sticky top-0 bg-background dark:bg-[#0a0a0b] border-b border-border dark:border-white/[0.06] z-10">
