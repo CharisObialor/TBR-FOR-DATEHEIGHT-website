@@ -1,3 +1,6 @@
-INFO:     127.0.0.1:58267 - "GET /api/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62458 - "GET /api/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54804 - "GET /api/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51092 - "GET /api/resources?published=true HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:51093 - "GET /api/services HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:57009 - "GET /api/resources?published=true HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:57010 - "GET /api/services HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:62358 - "GET /api/health HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:49397 - "GET /api/ HTTP/1.1" 200 OK

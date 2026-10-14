@@ -5,7 +5,7 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from email.utils import formataddr, make_msgid
 import aiosmtplib
-from email_logo import EMAIL_LOGO_DATA_URI
+from .email_logo import EMAIL_LOGO_DATA_URI
 
 logger = logging.getLogger(__name__)
 

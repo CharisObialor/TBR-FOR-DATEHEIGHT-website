@@ -1,3 +1,4 @@
+import asyncio
 import json
 import logging
 import os
@@ -5,7 +6,7 @@ import time
 from pathlib import Path
 
 from dotenv import load_dotenv
-from fastapi import FastAPI, HTTPException, Request
+from fastapi import FastAPI, HTTPException, Request, BackgroundTasks
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel
@@ -143,8 +144,46 @@ def get_resource(slug: str):
     return resource
 
 
+async def _send_newsletter_welcome(email: str, name: str):
+    html = build_newsletter_welcome_html(name=name)
+    subject = "Welcome to the TBR Solutions newsletter"
+    try:
+        await send_support_email(email, subject, html)
+        logger.info("Newsletter welcome email sent to %s", email)
+    except Exception as e:
+        logger.error("Newsletter welcome email could not be sent to %s: %s", email, e)
+
+
+async def _send_contact_emails(form: ContactForm) -> list:
+    html_body = build_contact_form_html(
+        name=form.name,
+        email=form.email,
+        phone=form.phone or "",
+        subject=form.subject,
+        message=form.message,
+    )
+    email_subject = f"Contact Form: {form.subject}"
+    confirmation_html = build_contact_confirmation_html(name=form.name, subject=form.subject)
+    confirmation_subject = "We've received your message — TBR Solutions"
+
+    tasks = [send_support_email(r, email_subject, html_body) for r in get_contact_recipients()]
+    tasks.append(send_support_email(form.email, confirmation_subject, confirmation_html))
+
+    results = await asyncio.gather(*tasks, return_exceptions=True)
+
+    failures = []
+    for recipient, result in zip(get_contact_recipients() + [form.email], results):
+        if isinstance(result, Exception):
+            failures.append(recipient)
+            logger.error("Email failed for %s: %s", recipient, result)
+        else:
+            logger.info("Email sent to %s", recipient)
+
+    return failures
+
+
 @app.post("/api/newsletter/subscribe")
-async def subscribe_newsletter(payload: NewsletterSubscribe):
+async def subscribe_newsletter(payload: NewsletterSubscribe, background_tasks: BackgroundTasks):
     email = (payload.email or "").strip().lower()
     if "@" not in email or "." not in email:
         raise HTTPException(status_code=400, detail="Please enter a valid email address.")
@@ -154,13 +193,8 @@ async def subscribe_newsletter(payload: NewsletterSubscribe):
         logger.error("Failed to save newsletter subscriber %s: %s", email, e)
         raise HTTPException(status_code=500, detail="Could not subscribe. Please try again.")
     if is_new:
-        html = build_newsletter_welcome_html(name=(payload.name or "").strip())
-        try:
-            await send_support_email(email, "Welcome to the TBR Solutions newsletter", html)
-        except Exception as e:
-            logger.warning("Newsletter welcome email failed for %s: %s", email, e)
-        return {"status": "success", "message": "Subscribed! Keep an eye on your inbox for insights."}
-    return {"status": "success", "message": "You are already subscribed — we will keep you updated."}
+        background_tasks.add_task(_send_newsletter_welcome, email, (payload.name or "").strip())
+    return {"status": "success", "message": "Subscribed! Keep an eye on your inbox for insights."}
 
 
 @app.post("/api/contact")
@@ -173,34 +207,17 @@ async def submit_contact_form(request: Request, form: ContactForm):
             content={"detail": "Too many messages. Please try again later.", "retry_after_seconds": retry_after},
         )
 
-    html_body = build_contact_form_html(
-        name=form.name,
-        email=form.email,
-        phone=form.phone or "",
-        subject=form.subject,
-        message=form.message,
-    )
-    email_subject = f"Contact Form: {form.subject}"
-
-    for recipient in get_contact_recipients():
-        try:
-            await send_support_email(recipient, email_subject, html_body)
-            logger.info("Contact notification email sent to %s", recipient)
-        except Exception as e:
-            logger.error("Contact notification email failed for %s: %s", recipient, e)
-
-    confirmation_html = build_contact_confirmation_html(name=form.name, subject=form.subject)
-    confirmation_subject = "We've received your message — TBR Solutions"
-    try:
-        await send_support_email(form.email, confirmation_subject, confirmation_html)
-        logger.info("Contact confirmation email sent to %s", form.email)
-    except Exception as e:
-        logger.warning("Contact confirmation via support sender failed for %s (%s); trying primary sender", form.email, e)
-        try:
-            await send_email(form.email, confirmation_subject, confirmation_html)
-            logger.info("Contact confirmation email sent to %s via primary sender", form.email)
-        except Exception as e2:
-            logger.error("Contact confirmation email could not be sent to %s: %s", form.email, e2)
+    failures = await _send_contact_emails(form)
+    if failures:
+        logger.error("Contact form submitted by %s <%s>: %s but emails FAILED for: %s",
+                     form.name, form.email, form.subject, ", ".join(failures))
+        return JSONResponse(
+            status_code=500,
+            content={
+                "detail": "Your message was received but could not be delivered by email. "
+                          "Please try again or contact us directly at support@tbrsolutions.ng.",
+            },
+        )
 
     logger.info("Contact form submitted by %s <%s>: %s", form.name, form.email, form.subject)
     return {"status": "success", "message": "Your message has been sent. We will get back to you shortly."}

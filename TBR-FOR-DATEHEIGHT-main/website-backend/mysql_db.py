@@ -1,6 +1,7 @@
 import json
 import logging
 import os
+import time
 import uuid
 from datetime import datetime, timezone
 from pathlib import Path
@@ -28,7 +29,11 @@ def get_conn():
     )
 
 
-def load_resources(published: Optional[bool] = None) -> list:
+_resources_cache = {"fetched_at": 0.0, "docs": []}
+_RESOURCES_CACHE_TTL = float(os.getenv("RESOURCES_CACHE_TTL", "60"))
+
+
+def _fetch_resources() -> list:
     conn = get_conn()
     try:
         with conn.cursor() as cur:
@@ -46,6 +51,21 @@ def load_resources(published: Optional[bool] = None) -> list:
         if not isinstance(doc, dict):
             continue
         docs.append(doc)
+    return docs
+
+
+def load_resources(published: Optional[bool] = None) -> list:
+    now = time.monotonic()
+    if now - _resources_cache["fetched_at"] >= _RESOURCES_CACHE_TTL or _resources_cache["docs"] is None:
+        try:
+            _resources_cache["docs"] = _fetch_resources()
+            _resources_cache["fetched_at"] = now
+        except Exception:
+            if not _resources_cache["docs"]:
+                raise
+            logger.warning("Resources refresh failed — serving cached copy")
+
+    docs = _resources_cache["docs"]
 
     if published is not None:
         docs = [d for d in docs if bool(d.get("published")) is published]
@@ -53,21 +73,10 @@ def load_resources(published: Optional[bool] = None) -> list:
 
 
 def load_resource_by_slug(slug: str):
-    conn = get_conn()
-    try:
-        with conn.cursor() as cur:
-            cur.execute("SELECT id, doc FROM resources WHERE slug = %s LIMIT 1", (slug,))
-            row = cur.fetchone()
-    finally:
-        conn.close()
-
-    if not row:
-        return None
-    try:
-        doc = json.loads(row["doc"])
-    except (TypeError, ValueError):
-        return None
-    return doc if isinstance(doc, dict) else None
+    for doc in load_resources():
+        if doc.get("slug") == slug:
+            return doc
+    return None
 
 
 _newsletter_table_ready = False
