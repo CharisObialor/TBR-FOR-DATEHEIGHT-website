@@ -6,6 +6,7 @@ import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
 import { Textarea } from '../components/ui/textarea';
 import { toast } from 'sonner';
+import Reveal from '../components/Reveal';
 
 const SUBJECT_OPTIONS = [
   'Service Inquiry',
@@ -15,7 +16,7 @@ const SUBJECT_OPTIONS = [
 ];
 
 const fieldClass =
-  'h-12 rounded-sm border-slate-200 focus-visible:border-blue-500 focus-visible:ring-2 focus-visible:ring-blue-100';
+  'h-12 rounded-xl border-slate-200 focus-visible:border-blue-500 focus-visible:ring-2 focus-visible:ring-blue-100';
 
 const Contact = () => {
   const [form, setForm] = useState({ name: '', email: '', phone: '', subject: '', message: '' });
@@ -47,193 +48,220 @@ const Contact = () => {
   };
 
   const contactInfo = [
-    { icon: MapPin, title: 'Office Address', details: ['Plot 5A, Block A10, Admiralty Way', 'Lekki, Lagos, Nigeria'] },
+    { icon: MapPin, title: 'Office address', details: ['Plot 5A, Block A10, Admiralty Way', 'Lekki, Lagos, Nigeria'] },
     { icon: Phone, title: 'Phone', details: ['+234 7068348923'] },
     { icon: Mail, title: 'Email', details: ['info@tbrsolutions.ng', 'support@tbrsolutions.ng'] },
-    { icon: Clock, title: 'Working Hours', details: ['Mon – Sat: 8 am – 5 pm', 'Sunday: CLOSED'] },
+    { icon: Clock, title: 'Working hours', details: ['Mon – Sat: 8 am – 5 pm', 'Sunday: Closed'] },
   ];
 
   return (
     <div className="bg-white">
       {/* Hero */}
-      <section className="pt-40 pb-16 bg-slate-950 text-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <p className="text-xs uppercase tracking-[0.2em] text-slate-400 mb-4">Get in Touch</p>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tighter leading-none mb-4 sm:mb-6" data-testid="contact-heading">
-              Let's Talk About
-              <br />
-              Your Compliance Needs
+      <section className="relative overflow-hidden pt-36 pb-16 sm:pt-40">
+        <div
+          className="pointer-events-none absolute inset-0 -z-10"
+          style={{
+            backgroundImage:
+              'radial-gradient(circle at 1px 1px, rgb(203 213 225 / 0.55) 1px, transparent 0)',
+            backgroundSize: '26px 26px',
+            maskImage: 'linear-gradient(to bottom, black 0%, transparent 100%)',
+            WebkitMaskImage: 'linear-gradient(to bottom, black 0%, transparent 100%)',
+          }}
+        />
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            className="max-w-3xl"
+          >
+            <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-3.5 py-1.5 text-xs font-medium text-slate-600 shadow-sm backdrop-blur">
+              <span className="flex h-1.5 w-1.5 rounded-full bg-blue-600" />
+              Get in touch
+            </span>
+            <h1
+              className="mt-6 text-4xl font-bold leading-[1.05] tracking-tighter text-slate-900 sm:text-5xl lg:text-6xl"
+              data-testid="contact-heading"
+            >
+              Let's talk about your compliance needs
             </h1>
-            <p className="text-base sm:text-xl text-slate-300 max-w-3xl leading-relaxed">
-              Whether you have a question about our services, need a quote, or want to discuss
-              a custom compliance solution — our team is ready to help.
+            <p className="mt-5 max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg">
+              Whether you have a question about our services, need a quote, or want to discuss a
+              custom compliance solution — our team is ready to help.
             </p>
           </motion.div>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section className="py-24">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-16">
-            {/* Contact Info */}
-            <div className="lg:col-span-2 space-y-10">
-              {contactInfo.map((item, i) => {
-                const Icon = item.icon;
-                return (
-                  <div key={i} className="flex gap-4">
-                    <div className="w-12 h-12 bg-blue-600 flex items-center justify-center flex-shrink-0">
-                      <Icon className="text-white" size={22} />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-slate-900 mb-1">{item.title}</h3>
-                      {item.details.map((line, j) => (
-                        <p key={j} className="text-sm text-slate-600">{line}</p>
-                      ))}
-                    </div>
-                  </div>
-                );
-              })}
-
-              <div className="p-6 bg-slate-50 border border-slate-200 border-l-4 border-l-blue-600">
-                <Building2 size={28} className="text-blue-600 mb-3" />
-                <p className="text-sm text-slate-600 leading-relaxed mb-4">
-                  Ready to get started? Schedule a free consultation with our compliance
-                  experts and discover how TBR Solutions can streamline your regulatory journey.
-                </p>
-                <a
-                  href="https://portal.tbrsolutions.ng/register"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-700"
-                >
-                  Create an account
-                  <ArrowRight size={16} />
-                </a>
+      <section className="py-12 sm:py-16">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-5 lg:gap-16">
+            {/* Info */}
+            <div className="space-y-8 lg:col-span-2">
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-1">
+                {contactInfo.map((item, i) => {
+                  const Icon = item.icon;
+                  return (
+                    <Reveal key={i} delay={i * 0.05}>
+                      <div className="flex gap-4 rounded-2xl border border-slate-200 bg-white p-5">
+                        <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
+                          <Icon size={20} />
+                        </span>
+                        <div>
+                          <h3 className="text-sm font-semibold text-slate-900">{item.title}</h3>
+                          {item.details.map((line, j) => (
+                            <p key={j} className="text-sm text-slate-600">{line}</p>
+                          ))}
+                        </div>
+                      </div>
+                    </Reveal>
+                  );
+                })}
               </div>
+
+              <Reveal delay={0.1}>
+                <div className="rounded-2xl border border-blue-100 bg-blue-50/60 p-6">
+                  <Building2 size={26} className="mb-3 text-blue-600" />
+                  <p className="text-sm leading-relaxed text-slate-600">
+                    Ready to get started? Schedule a free consultation with our compliance experts
+                    and discover how TBR Solutions can streamline your regulatory journey.
+                  </p>
+                  <a
+                    href="https://portal.tbrsolutions.ng/register"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-blue-700 hover:text-blue-800"
+                  >
+                    Create an account
+                    <ArrowRight size={16} />
+                  </a>
+                </div>
+              </Reveal>
             </div>
 
-            {/* Contact Form */}
+            {/* Form */}
             <div className="lg:col-span-3">
-              <div className="bg-white border border-slate-200 shadow-sm">
-                <div className="border-b border-slate-200 p-6 sm:p-8">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 bg-blue-600 flex items-center justify-center">
-                      <MessageSquareText className="text-white" size={18} />
-                    </div>
-                    <div>
-                      <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
-                        Send us a message
-                      </h2>
+              <Reveal y={28}>
+                <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-[0_24px_70px_-40px_rgba(15,23,42,0.35)]">
+                  <div className="border-b border-slate-100 p-6 sm:p-8">
+                    <div className="flex items-center gap-3">
+                      <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-900 text-white">
+                        <MessageSquareText size={18} />
+                      </span>
+                      <div>
+                        <h2 className="text-xl font-semibold tracking-tight text-slate-900">
+                          Send us a message
+                        </h2>
+                        <p className="text-sm text-slate-500">
+                          We reply within one business day.
+                        </p>
+                      </div>
                     </div>
                   </div>
-                  <p className="text-sm text-slate-600 leading-relaxed">
-                    Fill in the form and our compliance team will get back to you within one
-                    business day.
-                  </p>
+
+                  <form onSubmit={handleSubmit} className="p-6 sm:p-8">
+                    <div className="mb-6">
+                      <span className="mb-2 block text-sm font-medium text-slate-900">
+                        What can we help you with?
+                      </span>
+                      <div className="flex flex-wrap gap-2">
+                        {SUBJECT_OPTIONS.map((option) => (
+                          <button
+                            key={option}
+                            type="button"
+                            onClick={() => setForm((p) => ({ ...p, subject: option }))}
+                            className={cn(
+                              'rounded-full border px-3.5 py-1.5 text-sm font-medium transition-colors',
+                              form.subject === option
+                                ? 'border-slate-900 bg-slate-900 text-white'
+                                : 'border-slate-200 bg-white text-slate-600 hover:border-slate-300'
+                            )}
+                          >
+                            {option}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                      <div className="space-y-2">
+                        <label className="block text-sm font-medium text-slate-900">
+                          Full name <span className="text-blue-600">*</span>
+                        </label>
+                        <Input name="name" value={form.name} onChange={handleChange} required placeholder="John Doe" className={fieldClass} />
+                      </div>
+                      <div className="space-y-2">
+                        <label className="block text-sm font-medium text-slate-900">
+                          Email address <span className="text-blue-600">*</span>
+                        </label>
+                        <Input name="email" type="email" value={form.email} onChange={handleChange} required placeholder="john@example.com" className={fieldClass} />
+                      </div>
+                    </div>
+
+                    <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2">
+                      <div className="space-y-2">
+                        <label className="block text-sm font-medium text-slate-900">Phone number</label>
+                        <Input name="phone" value={form.phone} onChange={handleChange} placeholder="+234 800 000 0000" className={fieldClass} />
+                      </div>
+                      <div className="space-y-2">
+                        <label className="block text-sm font-medium text-slate-900">
+                          Subject <span className="text-blue-600">*</span>
+                        </label>
+                        <Input name="subject" value={form.subject} onChange={handleChange} required placeholder="Service Inquiry" className={fieldClass} />
+                      </div>
+                    </div>
+
+                    <div className="mt-6 space-y-2">
+                      <label className="block text-sm font-medium text-slate-900">
+                        Message <span className="text-blue-600">*</span>
+                      </label>
+                      <Textarea
+                        name="message"
+                        value={form.message}
+                        onChange={handleChange}
+                        required
+                        rows={6}
+                        placeholder="Tell us about your compliance needs..."
+                        className="min-h-[140px] resize-y rounded-xl border-slate-200 focus-visible:border-blue-500 focus-visible:ring-2 focus-visible:ring-blue-100"
+                      />
+                    </div>
+
+                    <div className="mt-8 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
+                      <p className="text-xs text-slate-500">
+                        Your details are kept confidential and never shared.
+                      </p>
+                      <Button
+                        type="submit"
+                        className="h-12 gap-2 rounded-full bg-slate-900 px-7 font-semibold text-white hover:bg-slate-800"
+                        disabled={sending}
+                      >
+                        <Send size={16} />
+                        {sending ? 'Sending...' : 'Send message'}
+                      </Button>
+                    </div>
+                  </form>
                 </div>
-
-                <form onSubmit={handleSubmit} className="p-6 sm:p-8">
-                  <div className="mb-6">
-                    <span className="block text-sm font-medium text-slate-900 mb-2">
-                      What can we help you with?
-                    </span>
-                    <div className="flex flex-wrap gap-2">
-                      {SUBJECT_OPTIONS.map((option) => (
-                        <button
-                          key={option}
-                          type="button"
-                          onClick={() => setForm((p) => ({ ...p, subject: option }))}
-                          className={cn(
-                            'rounded-sm border px-3 py-1.5 text-sm font-medium transition-colors',
-                            form.subject === option
-                              ? 'bg-blue-600 text-white border-blue-600'
-                              : 'bg-white text-slate-600 border-slate-200 hover:border-blue-300 hover:text-blue-600'
-                          )}
-                        >
-                          {option}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                      <label className="block text-sm font-medium text-slate-900">
-                        Full Name <span className="text-blue-600">*</span>
-                      </label>
-                      <Input name="name" value={form.name} onChange={handleChange} required placeholder="John Doe" className={fieldClass} />
-                    </div>
-                    <div className="space-y-2">
-                      <label className="block text-sm font-medium text-slate-900">
-                        Email Address <span className="text-blue-600">*</span>
-                      </label>
-                      <Input name="email" type="email" value={form.email} onChange={handleChange} required placeholder="john@example.com" className={fieldClass} />
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
-                    <div className="space-y-2">
-                      <label className="block text-sm font-medium text-slate-900">Phone Number</label>
-                      <Input name="phone" value={form.phone} onChange={handleChange} placeholder="+234 800 000 0000" className={fieldClass} />
-                    </div>
-                    <div className="space-y-2">
-                      <label className="block text-sm font-medium text-slate-900">
-                        Subject <span className="text-blue-600">*</span>
-                      </label>
-                      <Input name="subject" value={form.subject} onChange={handleChange} required placeholder="Service Inquiry" className={fieldClass} />
-                    </div>
-                  </div>
-
-                  <div className="space-y-2 mt-6">
-                    <label className="block text-sm font-medium text-slate-900">
-                      Message <span className="text-blue-600">*</span>
-                    </label>
-                    <Textarea
-                      name="message"
-                      value={form.message}
-                      onChange={handleChange}
-                      required
-                      rows={6}
-                      placeholder="Tell us about your compliance needs..."
-                      className="resize-y min-h-[140px] rounded-sm border-slate-200 focus-visible:border-blue-500 focus-visible:ring-2 focus-visible:ring-blue-100"
-                    />
-                  </div>
-
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-8">
-                    <p className="text-xs text-slate-500">
-                      Your details are kept confidential and never shared.
-                    </p>
-                    <Button
-                      type="submit"
-                      size="lg"
-                      className="bg-blue-600 text-white hover:bg-blue-700 rounded-sm h-12 px-8 shadow-sm"
-                      disabled={sending}
-                    >
-                      <Send size={16} />
-                      {sending ? 'Sending...' : 'Send Message'}
-                    </Button>
-                  </div>
-                </form>
-              </div>
+              </Reveal>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Map Section */}
-      <section className="h-[350px]">
-        <iframe
-          title="TBR Solutions Location"
-          src="https://www.google.com/maps?q=Plot+5A+Block+A10+Admiralty+Way+Lekki+Lagos+Nigeria&output=embed"
-          width="100%"
-          height="100%"
-          style={{ border: 0 }}
-          allowFullScreen=""
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-        />
+      {/* Map */}
+      <section className="px-6 pb-24 lg:px-8">
+        <div className="mx-auto max-w-7xl overflow-hidden rounded-3xl border border-slate-200">
+          <iframe
+            title="TBR Solutions Location"
+            src="https://www.google.com/maps?q=Plot+5A+Block+A10+Admiralty+Way+Lekki+Lagos+Nigeria&output=embed"
+            width="100%"
+            height="380"
+            style={{ border: 0 }}
+            allowFullScreen=""
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </div>
       </section>
     </div>
   );

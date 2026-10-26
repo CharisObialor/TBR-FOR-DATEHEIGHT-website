@@ -95,12 +95,12 @@ const NewsletterForm = () => {
           onChange={(e) => setEmail(e.target.value)}
           placeholder="you@company.com"
           aria-label="Email address"
-          className="h-12 flex-1 rounded-sm bg-white/10 border border-white/10 px-4 text-sm text-white placeholder:text-slate-500 outline-none focus:border-blue-500 transition-colors"
+          className="h-12 flex-1 rounded-full bg-white/10 border border-white/10 px-5 text-sm text-white placeholder:text-slate-500 outline-none focus:border-blue-500 transition-colors"
         />
         <button
           type="submit"
           disabled={status === 'loading'}
-          className="h-12 inline-flex items-center justify-center gap-2 rounded-sm bg-blue-600 px-6 text-sm font-semibold text-white hover:bg-blue-500 disabled:opacity-60 disabled:cursor-not-allowed transition-colors"
+          className="h-12 inline-flex items-center justify-center gap-2 rounded-full bg-blue-600 px-6 text-sm font-semibold text-white hover:bg-blue-500 disabled:opacity-60 disabled:cursor-not-allowed transition-colors"
           data-testid="newsletter-submit"
         >
           {status === 'loading' ? (
@@ -190,7 +190,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="flex h-9 w-9 items-center justify-center rounded-sm bg-slate-800 text-slate-300 hover:bg-blue-600 hover:text-white transition-colors"
+                  className="flex h-9 w-9 items-center justify-center rounded-full bg-slate-800 text-slate-300 hover:bg-blue-600 hover:text-white transition-colors"
                 >
                   <Icon size={16} />
                 </a>
