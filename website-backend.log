@@ -1,35 +1,27 @@
-INFO:     127.0.0.1:59950 - "GET /api/auth/me HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:59952 - "GET /api/auth/me HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:58799 - "GET /api/auth/me HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:58801 - "GET /api/auth/me HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:52560 - "GET /api/auth/me HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:52562 - "GET /api/auth/me HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:52564 - "GET /api/resources?published=true HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52569 - "GET /api/resources?published=true HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60369 - "GET /api/auth/me HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:60371 - "GET /api/auth/me HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:58462 - "GET /api/auth/me HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:58464 - "GET /api/auth/me HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:57745 - "GET /api/resources?published=true HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57750 - "GET /api/resources?published=true HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54508 - "GET /api/auth/me HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:54510 - "GET /api/auth/me HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:61630 - "GET /api/resources?published=true HTTP/1.1" 200 OK
-INFO:     127.0.0.1:61634 - "GET /api/resources?published=true HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57057 - "GET /api/auth/me HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:57059 - "GET /api/auth/me HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:57439 - "GET /api/auth/me HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:57441 - "GET /api/auth/me HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:58626 - "GET /api/auth/me HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:58628 - "GET /api/auth/me HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:63971 - "GET /api/resources?published=true HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49891 - "GET /api/resources?published=true HTTP/1.1" 200 OK
-INFO:     127.0.0.1:64759 - "GET /api/auth/me HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:64761 - "GET /api/auth/me HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:62371 - "GET /api/resources?published=true HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62376 - "GET /api/resources?published=true HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49342 - "GET /api/auth/me HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:49344 - "GET /api/auth/me HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:49346 - "GET /api/resources?published=true HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49351 - "GET /api/resources?published=true HTTP/1.1" 200 OK
-INFO:     127.0.0.1:65196 - "POST /api/newsletter/subscribe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57232 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59702 - "GET /api/auth/me HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59704 - "GET /api/auth/me HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50063 - "GET /api/auth/me HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50065 - "GET /api/auth/me HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50068 - "GET /api/auth/me HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:52869 - "GET /api/auth/me HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:61958 - "GET /api/auth/me HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:61960 - "GET /api/auth/me HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:61962 - "GET /api/auth/me HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:61964 - "GET /api/auth/me HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51194 - "GET /api/auth/me HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51196 - "GET /api/auth/me HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51198 - "GET /api/auth/me HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51200 - "GET /api/auth/me HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57815 - "GET /api/resources?published=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57820 - "GET /api/resources?published=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52790 - "GET /api/auth/me HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:62070 - "GET /api/auth/me HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57661 - "GET /api/resources?published=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57663 - "GET /api/resources?published=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64288 - "GET /api/auth/me HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:64290 - "GET /api/auth/me HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51982 - "GET /api/resources?published=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51987 - "GET /api/resources?published=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63745 - "GET /api/auth/me HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:63747 - "GET /api/auth/me HTTP/1.1" 404 Not Found

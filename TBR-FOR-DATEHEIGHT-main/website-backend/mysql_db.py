@@ -127,3 +127,92 @@ def create_subscriber(email: str, name: str = "") -> bool:
         return cur.rowcount == 1
     finally:
         conn.close()
+
+
+_contact_table_ready = False
+
+
+def ensure_contact_table():
+    global _contact_table_ready
+    if _contact_table_ready:
+        return
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                """
+                CREATE TABLE IF NOT EXISTS contact_submissions (
+                    id VARCHAR(36) PRIMARY KEY,
+                    name VARCHAR(255) NOT NULL,
+                    email VARCHAR(255) NOT NULL,
+                    phone VARCHAR(50) DEFAULT NULL,
+                    subject VARCHAR(255) NOT NULL,
+                    message TEXT NOT NULL,
+                    created_at VARCHAR(40) NOT NULL,
+                    status VARCHAR(20) NOT NULL DEFAULT 'new',
+                    INDEX idx_contact_created_at (created_at),
+                    INDEX idx_contact_email (email)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
+                """
+            )
+        conn.commit()
+        _contact_table_ready = True
+    finally:
+        conn.close()
+
+
+def create_contact_submission(name: str, email: str, phone: str, subject: str, message: str) -> str:
+    """Persist a contact form submission and return its id."""
+    ensure_contact_table()
+    submission_id = str(uuid.uuid4())
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                "INSERT INTO contact_submissions "
+                "(id, name, email, phone, subject, message, created_at, status) "
+                "VALUES (%s, %s, %s, %s, %s, %s, %s, 'new')",
+                (
+                    submission_id,
+                    name.strip(),
+                    email.strip().lower(),
+                    (phone or "").strip() or None,
+                    subject.strip(),
+                    message.strip(),
+                    datetime.now(timezone.utc).isoformat(),
+                ),
+            )
+        conn.commit()
+        return submission_id
+    finally:
+        conn.close()
+
+
+def load_contact_submissions(limit: int = 100) -> list:
+    ensure_contact_table()
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                "SELECT id, name, email, phone, subject, message, created_at, status "
+                "FROM contact_submissions ORDER BY created_at DESC LIMIT %s",
+                (max(1, int(limit)),),
+            )
+            return list(cur.fetchall())
+    finally:
+        conn.close()
+
+
+def load_newsletter_subscribers(limit: int = 1000) -> list:
+    ensure_newsletter_table()
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                "SELECT id, email, name, created_at, subscribed "
+                "FROM newsletter_subscribers ORDER BY created_at DESC LIMIT %s",
+                (max(1, int(limit)),),
+            )
+            return list(cur.fetchall())
+    finally:
+        conn.close()

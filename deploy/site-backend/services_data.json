@@ -1,0 +1,659 @@
+[
+  {
+    "id": "tax-registration",
+    "slug": "tax-registration",
+    "title": "Tax Registration (State or Federal)",
+    "category": "tax",
+    "subcategory": "Tax Compliance",
+    "division": "Tax Services",
+    "description": "Complete tax registration with FIRS or State IRS for businesses and individuals."
+  },
+  {
+    "id": "cit-filing",
+    "slug": "cit-filing",
+    "title": "Company Income Tax (CIT) Filing",
+    "category": "tax",
+    "subcategory": "Tax Compliance",
+    "division": "Tax Services",
+    "description": "Annual CIT returns filing for registered companies in Nigeria, including computation and optimization."
+  },
+  {
+    "id": "vat-filing",
+    "slug": "vat-filing",
+    "title": "Value Added Tax (VAT) Filing",
+    "category": "tax",
+    "subcategory": "Tax Compliance",
+    "division": "Tax Services",
+    "description": "Monthly VAT returns filing and remittance for VAT-registered businesses."
+  },
+  {
+    "id": "wht-filing",
+    "slug": "wht-filing",
+    "title": "Withholding Tax (WHT) Filing",
+    "category": "tax",
+    "subcategory": "Tax Compliance",
+    "division": "Tax Services",
+    "description": "WHT returns filing and remittance compliance including vendor certificate issuance."
+  },
+  {
+    "id": "paye-administration",
+    "slug": "paye-administration",
+    "title": "PAYE Administration",
+    "category": "tax",
+    "subcategory": "Tax Compliance",
+    "division": "Tax Services",
+    "description": "Monthly PAYE deduction, filing and remittance to State IRS."
+  },
+  {
+    "id": "education-tax",
+    "slug": "education-tax",
+    "title": "Education Tax Computation",
+    "category": "tax",
+    "subcategory": "Tax Compliance",
+    "division": "Tax Services",
+    "description": "Computation and filing of Education Tax (TETFund) for applicable companies."
+  },
+  {
+    "id": "capital-gains-tax",
+    "slug": "capital-gains-tax",
+    "title": "Capital Gains Tax Filing",
+    "category": "tax",
+    "subcategory": "Tax Compliance",
+    "division": "Tax Services",
+    "description": "Capital Gains Tax computation and filing for asset disposals and business sales."
+  },
+  {
+    "id": "stamp-duties",
+    "slug": "stamp-duties",
+    "title": "Stamp Duties Compliance",
+    "category": "tax",
+    "subcategory": "Tax Compliance",
+    "division": "Tax Services",
+    "description": "Stamp duties assessment, payment and filing for agreements, instruments and documents."
+  },
+  {
+    "id": "transfer-pricing",
+    "slug": "transfer-pricing",
+    "title": "Transfer Pricing Documentation",
+    "category": "tax",
+    "subcategory": "Tax Compliance",
+    "division": "Tax Services",
+    "description": "Transfer pricing documentation including master file, local file and country-by-country reporting."
+  },
+  {
+    "id": "tax-clearance-certificate",
+    "slug": "tax-clearance-certificate",
+    "title": "Tax Clearance Certificate (TCC)",
+    "category": "tax",
+    "subcategory": "Tax Compliance",
+    "division": "Tax Services",
+    "description": "TCC application and renewal for individuals and companies. Required for contracts, tenders and travel."
+  },
+  {
+    "id": "annual-tax-returns",
+    "slug": "annual-tax-returns",
+    "title": "Annual Tax Returns Preparation",
+    "category": "tax",
+    "subcategory": "Tax Compliance",
+    "division": "Tax Services",
+    "description": "Preparation and filing of annual tax returns for individuals, SMEs and corporations."
+  },
+  {
+    "id": "tax-remittance",
+    "slug": "tax-remittance",
+    "title": "Tax Remittance Management",
+    "category": "tax",
+    "subcategory": "Tax Compliance",
+    "division": "Tax Services",
+    "description": "End-to-end management of all tax remittances — CIT, VAT, WHT, PAYE — ensuring timely payment."
+  },
+  {
+    "id": "paye-registration",
+    "slug": "paye-registration",
+    "title": "PAYE Registration",
+    "category": "tax",
+    "subcategory": "Tax Compliance",
+    "division": "Tax Services",
+    "description": "Registration of your organization with the State Internal Revenue Service for PAYE tax compliance."
+  },
+  {
+    "id": "tax-health-check",
+    "slug": "tax-health-check",
+    "title": "Tax Health Check",
+    "category": "tax",
+    "subcategory": "Tax Compliance",
+    "division": "Tax Services",
+    "description": "Comprehensive review of your tax position, filings and obligations to identify risks and opportunities."
+  },
+  {
+    "id": "tax-planning",
+    "slug": "tax-planning",
+    "title": "Tax Planning & Optimization",
+    "category": "tax",
+    "subcategory": "Tax Advisory & Consulting",
+    "division": "Tax Services",
+    "description": "Strategic tax planning to minimize liabilities and align with business objectives."
+  },
+  {
+    "id": "tax-risk-assessment",
+    "slug": "tax-risk-assessment",
+    "title": "Tax Risk Assessment",
+    "category": "tax",
+    "subcategory": "Tax Advisory & Consulting",
+    "division": "Tax Services",
+    "description": "Identify, assess and mitigate tax risks across your business operations."
+  },
+  {
+    "id": "tax-efficient-structuring",
+    "slug": "tax-efficient-structuring",
+    "title": "Tax-Efficient Business Structuring",
+    "category": "tax",
+    "subcategory": "Tax Advisory & Consulting",
+    "division": "Tax Services",
+    "description": "Advice on optimal business structures for tax efficiency, including holding companies and group structures."
+  },
+  {
+    "id": "cross-border-tax",
+    "slug": "cross-border-tax",
+    "title": "Cross-Border Tax Advisory",
+    "category": "tax",
+    "subcategory": "Tax Advisory & Consulting",
+    "division": "Tax Services",
+    "description": "Tax advisory for cross-border transactions, non-resident entities and foreign investments."
+  },
+  {
+    "id": "expatriate-tax",
+    "slug": "expatriate-tax",
+    "title": "Expatriate Tax Advisory",
+    "category": "tax",
+    "subcategory": "Tax Advisory & Consulting",
+    "division": "Tax Services",
+    "description": "Tax compliance and planning for expatriate employees working in Nigeria."
+  },
+  {
+    "id": "investment-tax",
+    "slug": "investment-tax",
+    "title": "Investment Tax Advisory",
+    "category": "tax",
+    "subcategory": "Tax Advisory & Consulting",
+    "division": "Tax Services",
+    "description": "Tax advisory for investment vehicles, funds and capital market transactions."
+  },
+  {
+    "id": "ma-tax-advisory",
+    "slug": "ma-tax-advisory",
+    "title": "Mergers & Acquisition Tax Advisory",
+    "category": "tax",
+    "subcategory": "Tax Advisory & Consulting",
+    "division": "Tax Services",
+    "description": "Tax due diligence, structuring and integration support for M&A transactions."
+  },
+  {
+    "id": "startup-tax",
+    "slug": "startup-tax",
+    "title": "Startup Tax Advisory",
+    "category": "tax",
+    "subcategory": "Tax Advisory & Consulting",
+    "division": "Tax Services",
+    "description": "Tax guidance for startups from formation through growth stages, including incentive identification."
+  },
+  {
+    "id": "real-estate-tax",
+    "slug": "real-estate-tax",
+    "title": "Real Estate Tax Advisory",
+    "category": "tax",
+    "subcategory": "Tax Advisory & Consulting",
+    "division": "Tax Services",
+    "description": "Tax advisory for real estate development, property investment and REIT structures."
+  },
+  {
+    "id": "firs-audit-support",
+    "slug": "firs-audit-support",
+    "title": "FIRS Tax Audit Support",
+    "category": "tax",
+    "subcategory": "Tax Audit & Investigation",
+    "division": "Tax Services",
+    "description": "Professional support during FIRS tax audit exercises to ensure fair assessment."
+  },
+  {
+    "id": "state-irs-audit",
+    "slug": "state-irs-audit",
+    "title": "State IRS Audit Support",
+    "category": "tax",
+    "subcategory": "Tax Audit & Investigation",
+    "division": "Tax Services",
+    "description": "Support for audits by State Internal Revenue Services including PAYE and direct assessment audits."
+  },
+  {
+    "id": "tax-investigation-defense",
+    "slug": "tax-investigation-defense",
+    "title": "Tax Investigation Defense",
+    "category": "tax",
+    "subcategory": "Tax Audit & Investigation",
+    "division": "Tax Services",
+    "description": "Legal and technical defense against tax investigations including back-duty audits."
+  },
+  {
+    "id": "tax-dispute-resolution",
+    "slug": "tax-dispute-resolution",
+    "title": "Tax Dispute Resolution",
+    "category": "tax",
+    "subcategory": "Tax Audit & Investigation",
+    "division": "Tax Services",
+    "description": "Resolution of tax disputes through objection, appeal and alternative dispute resolution."
+  },
+  {
+    "id": "tax-reconciliation",
+    "slug": "tax-reconciliation",
+    "title": "Tax Reconciliation Services",
+    "category": "tax",
+    "subcategory": "Tax Audit & Investigation",
+    "division": "Tax Services",
+    "description": "Reconciliation of tax payments, returns and assessments to resolve discrepancies."
+  },
+  {
+    "id": "deferred-tax",
+    "slug": "deferred-tax",
+    "title": "Deferred Tax Computation",
+    "category": "tax",
+    "subcategory": "Specialized Tax Services",
+    "division": "Tax Services",
+    "description": "Deferred tax computation in accordance with IAS 12 for financial reporting purposes."
+  },
+  {
+    "id": "tax-due-diligence",
+    "slug": "tax-due-diligence",
+    "title": "Tax Due Diligence",
+    "category": "tax",
+    "subcategory": "Specialized Tax Services",
+    "division": "Tax Services",
+    "description": "Comprehensive tax due diligence for transactions, investments or compliance purposes."
+  },
+  {
+    "id": "vat-refund",
+    "slug": "vat-refund",
+    "title": "VAT Refund Processing",
+    "category": "tax",
+    "subcategory": "Specialized Tax Services",
+    "division": "Tax Services",
+    "description": "VAT refund application processing including documentation and follow-up with FIRS."
+  },
+  {
+    "id": "pioneer-status",
+    "slug": "pioneer-status",
+    "title": "Pioneer Status Incentive Application",
+    "category": "tax",
+    "subcategory": "Specialized Tax Services",
+    "division": "Tax Services",
+    "description": "Application for pioneer status incentive granting tax holiday for qualifying industries."
+  },
+  {
+    "id": "free-trade-zone",
+    "slug": "free-trade-zone",
+    "title": "Free Trade Zone Tax Advisory",
+    "category": "tax",
+    "subcategory": "Specialized Tax Services",
+    "division": "Tax Services",
+    "description": "Tax advisory for companies operating in or establishing in Nigerian free trade zones."
+  },
+  {
+    "id": "cac-registration",
+    "slug": "cac-registration",
+    "title": "Company Registration (CAC)",
+    "category": "business",
+    "subcategory": "Business Formation & Structuring",
+    "division": "Business Services",
+    "description": "Complete CAC registration for Business Name, Limited Liability Company or Incorporated Trustees."
+  },
+  {
+    "id": "business-name-registration",
+    "slug": "business-name-registration",
+    "title": "Business Name Registration",
+    "category": "business",
+    "subcategory": "Business Formation & Structuring",
+    "division": "Business Services",
+    "description": "Registration of business name with CAC for sole proprietorships and partnerships."
+  },
+  {
+    "id": "ngo-registration",
+    "slug": "ngo-registration",
+    "title": "NGO/Incorporated Trustee Registration",
+    "category": "business",
+    "subcategory": "Business Formation & Structuring",
+    "division": "Business Services",
+    "description": "Registration of NGOs, trusts and non-profit organizations with CAC and related bodies."
+  },
+  {
+    "id": "foreign-company-registration",
+    "slug": "foreign-company-registration",
+    "title": "Foreign Company Registration",
+    "category": "business",
+    "subcategory": "Business Formation & Structuring",
+    "division": "Business Services",
+    "description": "Registration of foreign companies establishing presence in Nigeria through branches or subsidiaries."
+  },
+  {
+    "id": "corporate-restructuring",
+    "slug": "corporate-restructuring",
+    "title": "Corporate Restructuring",
+    "category": "business",
+    "subcategory": "Business Formation & Structuring",
+    "division": "Business Services",
+    "description": "Corporate restructuring including change of name, share capital changes and director changes."
+  },
+  {
+    "id": "corporate-secretarial",
+    "slug": "corporate-secretarial",
+    "title": "Corporate Secretarial Services",
+    "category": "business",
+    "subcategory": "Business Formation & Structuring",
+    "division": "Business Services",
+    "description": "Company secretarial services including board meeting minutes, register maintenance and statutory filings."
+  },
+  {
+    "id": "bookkeeping",
+    "slug": "bookkeeping",
+    "title": "Bookkeeping Services",
+    "category": "business",
+    "subcategory": "Financial & Accounting Services",
+    "division": "Business Services",
+    "description": "Professional bookkeeping for SMEs including transaction recording and account reconciliation."
+  },
+  {
+    "id": "bank-reconciliation",
+    "slug": "bank-reconciliation",
+    "title": "Bank Reconciliation",
+    "category": "business",
+    "subcategory": "Financial & Accounting Services",
+    "division": "Business Services",
+    "description": "Reconcile bank statements with internal financial records to ensure accuracy and identify discrepancies."
+  },
+  {
+    "id": "accounts-payable",
+    "slug": "accounts-payable",
+    "title": "Accounts Payable Management",
+    "category": "business",
+    "subcategory": "Financial & Accounting Services",
+    "division": "Business Services",
+    "description": "Complete management of accounts payable including invoice processing, vendor payments, and aging analysis."
+  },
+  {
+    "id": "accounts-receivable",
+    "slug": "accounts-receivable",
+    "title": "Accounts Receivable Management",
+    "category": "business",
+    "subcategory": "Financial & Accounting Services",
+    "division": "Business Services",
+    "description": "Management of accounts receivable including invoicing, collections, credit control, and aging analysis."
+  },
+  {
+    "id": "inventory-reconciliation",
+    "slug": "inventory-reconciliation",
+    "title": "Inventory Reconciliation",
+    "category": "business",
+    "subcategory": "Financial & Accounting Services",
+    "division": "Business Services",
+    "description": "Physical inventory count reconciliation with book records to identify and account for discrepancies."
+  },
+  {
+    "id": "general-ledger-review",
+    "slug": "general-ledger-review",
+    "title": "General Ledger Review",
+    "category": "business",
+    "subcategory": "Financial & Accounting Services",
+    "division": "Business Services",
+    "description": "Thorough review of the general ledger to ensure accuracy, completeness, and compliance with accounting standards."
+  },
+  {
+    "id": "trial-balance",
+    "slug": "trial-balance",
+    "title": "Trial Balance Preparation",
+    "category": "business",
+    "subcategory": "Financial & Accounting Services",
+    "division": "Business Services",
+    "description": "Preparation of trial balance from general ledger to verify debits equal credits and identify posting errors."
+  },
+  {
+    "id": "outsourced-accounting",
+    "slug": "outsourced-accounting",
+    "title": "Outsourced Accounting",
+    "category": "business",
+    "subcategory": "Financial & Accounting Services",
+    "division": "Business Services",
+    "description": "Full outsourced accounting function including payable/receivable management and financial reporting."
+  },
+  {
+    "id": "financial-statement",
+    "slug": "financial-statement",
+    "title": "Financial Statement Preparation",
+    "category": "business",
+    "subcategory": "Financial & Accounting Services",
+    "division": "Business Services",
+    "description": "Preparation of financial statements in compliance with IFRS or local GAAP."
+  },
+  {
+    "id": "management-accounts",
+    "slug": "management-accounts",
+    "title": "Management Accounts Preparation",
+    "category": "business",
+    "subcategory": "Financial & Accounting Services",
+    "division": "Business Services",
+    "description": "Monthly/quarterly management accounts for informed business decision-making."
+  },
+  {
+    "id": "payroll-management",
+    "slug": "payroll-management",
+    "title": "Payroll Management",
+    "category": "business",
+    "subcategory": "Financial & Accounting Services",
+    "division": "Business Services",
+    "description": "End-to-end payroll processing including PAYE computation, pension and statutory deductions."
+  },
+  {
+    "id": "business-plan",
+    "slug": "business-plan",
+    "title": "Business Plan Preparation",
+    "category": "business",
+    "subcategory": "Business Advisory Services",
+    "division": "Business Services",
+    "description": "Professional business plan preparation for startups, funding applications and strategic planning."
+  },
+  {
+    "id": "feasibility-study",
+    "slug": "feasibility-study",
+    "title": "Feasibility Studies",
+    "category": "business",
+    "subcategory": "Business Advisory Services",
+    "division": "Business Services",
+    "description": "Comprehensive feasibility studies for new ventures, projects or expansions."
+  },
+  {
+    "id": "financial-modeling",
+    "slug": "financial-modeling",
+    "title": "Financial Modeling",
+    "category": "business",
+    "subcategory": "Business Advisory Services",
+    "division": "Business Services",
+    "description": "Custom financial models for valuation, fundraising, budgeting and scenario analysis."
+  },
+  {
+    "id": "business-valuation",
+    "slug": "business-valuation",
+    "title": "Business Valuation",
+    "category": "business",
+    "subcategory": "Business Advisory Services",
+    "division": "Business Services",
+    "description": "Business valuation for investment, sale, tax or strategic purposes using multiple methodologies."
+  },
+  {
+    "id": "due-diligence",
+    "slug": "due-diligence",
+    "title": "Due Diligence Services",
+    "category": "business",
+    "subcategory": "Transaction & Investment Support",
+    "division": "Business Services",
+    "description": "Financial, tax and operational due diligence for transactions and investments."
+  },
+  {
+    "id": "investor-readiness",
+    "slug": "investor-readiness",
+    "title": "Investor Readiness Support",
+    "category": "business",
+    "subcategory": "Transaction & Investment Support",
+    "division": "Business Services",
+    "description": "Preparation services to make your business investor-ready including documentation and materials."
+  },
+  {
+    "id": "hr-compliance",
+    "slug": "hr-compliance",
+    "title": "HR Compliance Support",
+    "category": "business",
+    "subcategory": "Human Capital & Outsourcing",
+    "division": "Business Services",
+    "description": "HR compliance advisory including employment contracts, policies and statutory compliance."
+  },
+  {
+    "id": "cac-annual-returns",
+    "slug": "cac-annual-returns",
+    "title": "CAC Annual Returns Filing",
+    "category": "regulatory",
+    "subcategory": "Corporate Regulatory Compliance",
+    "division": "Regulatory Services",
+    "description": "Annual returns filing with CAC to maintain good standing and avoid penalties."
+  },
+  {
+    "id": "beneficial-ownership",
+    "slug": "beneficial-ownership",
+    "title": "Beneficial Ownership Compliance",
+    "category": "regulatory",
+    "subcategory": "Corporate Regulatory Compliance",
+    "division": "Regulatory Services",
+    "description": "Beneficial ownership register maintenance and filing with CAC as required by law."
+  },
+  {
+    "id": "scuml-registration",
+    "slug": "scuml-registration",
+    "title": "SCUML Registration",
+    "category": "regulatory",
+    "subcategory": "Corporate Regulatory Compliance",
+    "division": "Regulatory Services",
+    "description": "Registration with Special Control Unit against Money Laundering for designated non-financial businesses."
+  },
+  {
+    "id": "nsitf-compliance",
+    "slug": "nsitf-compliance",
+    "title": "NSITF Compliance",
+    "category": "regulatory",
+    "subcategory": "Corporate Regulatory Compliance",
+    "division": "Regulatory Services",
+    "description": "Nigeria Social Insurance Trust Fund registration, contributions and returns filing."
+  },
+  {
+    "id": "itf-compliance",
+    "slug": "itf-compliance",
+    "title": "ITF Compliance",
+    "category": "regulatory",
+    "subcategory": "Corporate Regulatory Compliance",
+    "division": "Regulatory Services",
+    "description": "Industrial Training Fund registration, levy payment and training plan filing."
+  },
+  {
+    "id": "pencom-compliance",
+    "slug": "pencom-compliance",
+    "title": "PENCOM Compliance",
+    "category": "regulatory",
+    "subcategory": "Corporate Regulatory Compliance",
+    "division": "Regulatory Services",
+    "description": "Pension commission compliance including RSA registration and contribution remittance."
+  },
+  {
+    "id": "data-protection",
+    "slug": "data-protection",
+    "title": "Data Protection Compliance (NDPC)",
+    "category": "regulatory",
+    "subcategory": "Corporate Regulatory Compliance",
+    "division": "Regulatory Services",
+    "description": "NDPC registration, data protection framework implementation and compliance filing."
+  },
+  {
+    "id": "nafdac-registration",
+    "slug": "nafdac-registration",
+    "title": "NAFDAC Registration",
+    "category": "regulatory",
+    "subcategory": "Industry-Specific Regulatory Support",
+    "division": "Regulatory Services",
+    "description": "NAFDAC product registration for food, drugs, cosmetics, chemicals and medical devices."
+  },
+  {
+    "id": "son-certification",
+    "slug": "son-certification",
+    "title": "SON Certification",
+    "category": "regulatory",
+    "subcategory": "Industry-Specific Regulatory Support",
+    "division": "Regulatory Services",
+    "description": "Standards Organization of Nigeria certification including SONCAP and product standards."
+  },
+  {
+    "id": "expatriate-quota",
+    "slug": "expatriate-quota",
+    "title": "Expatriate Quota Processing",
+    "category": "regulatory",
+    "subcategory": "Government Licensing & Permits",
+    "division": "Regulatory Services",
+    "description": "Expatriate quota application, renewal and administration with Ministry of Interior."
+  },
+  {
+    "id": "business-permit",
+    "slug": "business-permit",
+    "title": "Business Permits Processing",
+    "category": "regulatory",
+    "subcategory": "Government Licensing & Permits",
+    "division": "Regulatory Services",
+    "description": "Business permit application and renewal for foreign-owned companies operating in Nigeria."
+  },
+  {
+    "id": "e-invoicing",
+    "slug": "e-invoicing",
+    "title": "E-Invoicing Implementation",
+    "category": "digital",
+    "subcategory": "Digital & Technology Compliance",
+    "division": "Modern Services",
+    "description": "E-invoicing system implementation for tax compliance including FIRS e-invoice integration."
+  },
+  {
+    "id": "erp-tax-configuration",
+    "slug": "erp-tax-configuration",
+    "title": "ERP Tax Configuration",
+    "category": "digital",
+    "subcategory": "Digital & Technology Compliance",
+    "division": "Modern Services",
+    "description": "Tax configuration and optimization within ERP systems for automated tax compliance."
+  },
+  {
+    "id": "tax-reporting-automation",
+    "slug": "tax-reporting-automation",
+    "title": "Automation of Tax Reporting",
+    "category": "digital",
+    "subcategory": "Digital & Technology Compliance",
+    "division": "Modern Services",
+    "description": "Automate tax data extraction, computation and report generation to eliminate manual processes."
+  },
+  {
+    "id": "erm",
+    "slug": "erm",
+    "title": "Enterprise Risk Management",
+    "category": "risk",
+    "subcategory": "Risk & Governance Services",
+    "division": "Modern Services",
+    "description": "Enterprise risk management framework development including risk identification and mitigation."
+  },
+  {
+    "id": "internal-audit",
+    "slug": "internal-audit",
+    "title": "Internal Audit Outsourcing",
+    "category": "risk",
+    "subcategory": "Risk & Governance Services",
+    "division": "Modern Services",
+    "description": "Outsourced internal audit function including risk-based audit planning and execution."
+  }
+]

@@ -300,7 +300,18 @@ const PortalSidebar = () => {
         {/* Logo */}
         <div className="p-6 border-b border-slate-800 flex items-center justify-between">
           <Link to="/" className="flex items-center space-x-3">
-            <img src="/images/logo.png" alt="TBR Solutions" className="h-10" />
+            <picture>
+              <source srcSet="/images/logo.webp" type="image/webp" />
+              <img
+                src="/images/logo-256.png"
+                alt="TBR Solutions"
+                width="256"
+                height="256"
+                className="h-10 w-auto"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
           </Link>
         </div>
 

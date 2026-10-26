@@ -20,11 +20,22 @@ from email_service import (
     build_contact_confirmation_html,
     build_newsletter_welcome_html,
 )
-from mysql_db import load_resources, load_resource_by_slug, create_subscriber, ensure_newsletter_table
+from mysql_db import (
+    load_resources,
+    load_resource_by_slug,
+    create_subscriber,
+    ensure_newsletter_table,
+    create_contact_submission,
+    ensure_contact_table,
+)
 
 load_dotenv(Path(__file__).resolve().parent / ".env")
 
-logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s")
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+    force=True,
+)
 logger = logging.getLogger("website-backend")
 
 BASE_PATH = Path(__file__).resolve().parent
@@ -90,6 +101,10 @@ def init_db_tables():
         ensure_newsletter_table()
     except Exception as e:
         logger.warning("Could not create newsletter_subscribers table: %s", e)
+    try:
+        ensure_contact_table()
+    except Exception as e:
+        logger.warning("Could not create contact_submissions table: %s", e)
 
 
 @app.get("/api/health")
@@ -146,7 +161,7 @@ def get_resource(slug: str):
 
 async def _send_newsletter_welcome(email: str, name: str):
     html = build_newsletter_welcome_html(name=name)
-    subject = "Welcome to the TBR Solutions newsletter"
+    subject = "Subscription confirmed - TBR Solutions"
     try:
         await send_support_email(email, subject, html)
         logger.info("Newsletter welcome email sent to %s", email)
@@ -162,9 +177,11 @@ async def _send_contact_emails(form: ContactForm) -> list:
         subject=form.subject,
         message=form.message,
     )
-    email_subject = f"Contact Form: {form.subject}"
-    confirmation_html = build_contact_confirmation_html(name=form.name, subject=form.subject)
-    confirmation_subject = "We've received your message — TBR Solutions"
+    email_subject = f"Contact form: {form.subject}"
+    confirmation_html = build_contact_confirmation_html(
+        name=form.name, subject=form.subject, message=form.message
+    )
+    confirmation_subject = "Message received - TBR Solutions"
 
     tasks = [send_support_email(r, email_subject, html_body) for r in get_contact_recipients()]
     tasks.append(send_support_email(form.email, confirmation_subject, confirmation_html))
@@ -182,6 +199,10 @@ async def _send_contact_emails(form: ContactForm) -> list:
     return failures
 
 
+_welcome_email_sent_at = {}
+_WELCOME_EMAIL_COOLDOWN = int(os.getenv("NEWSLETTER_WELCOME_COOLDOWN", "60"))
+
+
 @app.post("/api/newsletter/subscribe")
 async def subscribe_newsletter(payload: NewsletterSubscribe, background_tasks: BackgroundTasks):
     email = (payload.email or "").strip().lower()
@@ -192,9 +213,19 @@ async def subscribe_newsletter(payload: NewsletterSubscribe, background_tasks: B
     except Exception as e:
         logger.error("Failed to save newsletter subscriber %s: %s", email, e)
         raise HTTPException(status_code=500, detail="Could not subscribe. Please try again.")
-    if is_new:
+
+    now = time.time()
+    if now - _welcome_email_sent_at.get(email, 0) >= _WELCOME_EMAIL_COOLDOWN:
+        _welcome_email_sent_at[email] = now
         background_tasks.add_task(_send_newsletter_welcome, email, (payload.name or "").strip())
-    return {"status": "success", "message": "Subscribed! Keep an eye on your inbox for insights."}
+    else:
+        logger.info("Skipping duplicate welcome email to %s (cooldown)", email)
+
+    return {
+        "status": "success",
+        "already_subscribed": not is_new,
+        "message": "Subscription confirmed. Check your inbox for a confirmation email.",
+    }
 
 
 @app.post("/api/contact")
@@ -206,6 +237,19 @@ async def submit_contact_form(request: Request, form: ContactForm):
             status_code=429,
             content={"detail": "Too many messages. Please try again later.", "retry_after_seconds": retry_after},
         )
+
+    try:
+        submission_id = create_contact_submission(
+            name=form.name,
+            email=form.email,
+            phone=form.phone or "",
+            subject=form.subject,
+            message=form.message,
+        )
+        logger.info("Contact submission stored: %s", submission_id)
+    except Exception as e:
+        logger.error("Failed to store contact submission from %s: %s", form.email, e)
+        raise HTTPException(status_code=500, detail="Could not submit your message. Please try again.")
 
     failures = await _send_contact_emails(form)
     if failures:
@@ -220,7 +264,11 @@ async def submit_contact_form(request: Request, form: ContactForm):
         )
 
     logger.info("Contact form submitted by %s <%s>: %s", form.name, form.email, form.subject)
-    return {"status": "success", "message": "Your message has been sent. We will get back to you shortly."}
+    return {
+        "status": "success",
+        "message": "Your message has been sent. We will get back to you shortly.",
+        "reference": submission_id,
+    }
 
 
 @app.exception_handler(404)

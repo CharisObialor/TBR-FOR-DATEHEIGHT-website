@@ -176,7 +176,18 @@ const Footer = () => {
           {/* Brand */}
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-3 mb-4">
-              <img src="/images/logo.png" alt="TBR Solutions" className="h-10" />
+              <picture>
+                <source srcSet="/images/logo.webp" type="image/webp" />
+                <img
+                  src="/images/logo-256.png"
+                  alt="TBR Solutions"
+                  width="256"
+                  height="256"
+                  className="h-10 w-auto"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
             </div>
             <p className="text-sm text-slate-400 mb-6 max-w-xs">
               Premier tax, business, and regulatory advisory firm serving

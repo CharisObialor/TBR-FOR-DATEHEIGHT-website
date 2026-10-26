@@ -296,7 +296,19 @@ const Navigation = ({ belowBanner = false }) => {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <Link to="/" className="flex items-center gap-2.5" data-testid="nav-logo">
-            <img src="/images/logo1.png" alt="TBR Solutions" className="h-14 w-auto" />
+            <picture>
+              <source srcSet="/images/logo1.webp" type="image/webp" />
+              <img
+                src="/images/logo1-256.png"
+                alt="TBR Solutions"
+                width="256"
+                height="176"
+                className="h-14 w-auto"
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
+              />
+            </picture>
           </Link>
 
           {/* Desktop nav */}
@@ -373,7 +385,18 @@ const Navigation = ({ belowBanner = false }) => {
             <div className="sticky top-0 z-10 border-b border-slate-100 bg-white">
               <div className="flex h-16 items-center justify-between px-6">
                 <Link to="/" onClick={closeMobile}>
-                  <img src="/images/logo1.png" alt="TBR Solutions" className="h-11" />
+                  <picture>
+                    <source srcSet="/images/logo1.webp" type="image/webp" />
+                    <img
+                      src="/images/logo1-256.png"
+                      alt="TBR Solutions"
+                      width="256"
+                      height="176"
+                      className="h-11 w-auto"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </picture>
                 </Link>
                 <button className="p-2 text-slate-600" onClick={closeMobile}>
                   <X size={24} />
